@@ -1,17 +1,14 @@
 <footer class="footer">
     <div class="container">
         <div class="rs">
-            <a href="#" class="footer-picto black" title="Liens vers Facebook">
-                <img src="img/facebook.svg" alt="Pictogramme Facebook" class="black">
-                <img src="img/facebook-white.svg" alt="Pictogramme Facebook" class="white">
+            <a href="#" class="footer-picto" title="Liens vers rs">
+                Lien RS
             </a>
-            <a href="#" class="footer-picto black" title="Liens vers Twitter">
-                <img src="img/twitter.svg" alt="Pictogramme Twitter" class="black">
-                <img src="img/twitter-white.svg" alt="Pictogramme Twitter" class="white">
+            <a href="#" class="footer-picto" title="Liens vers rs">
+                Lien RS
             </a>
-            <a href="#" class="footer-picto black" title="Liens vers Linkedin">
-                <img src="img/linkedin.svg" alt="Pictogramme Linkedin" class="black">
-                <img src="img/linkedin-white.svg" alt="Pictogramme Linkedin" class="white">
+                <a href="#" class="footer-picto" title="Liens vers rs">
+                Lien RS
             </a>
 
 
