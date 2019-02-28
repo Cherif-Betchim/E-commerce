@@ -1,0 +1,71 @@
+/*----------------------------------------------*/
+/*              FLEX DECLARATIONS               */
+/*----------------------------------------------*/
+
+.cartNav, .cartProductList
+{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+
+/*----------------------------------------------*/
+/*                      ELSE                    */
+/*----------------------------------------------*/
+
+.cartNav h3
+{
+    flex-grow: 1;
+    padding: 1rem;
+    text-align: center;
+}
+
+.cartNav h3.selected
+{
+    background-color: #000000;
+}
+
+.cartBody
+{
+    width: 100%;
+    border: 1px solid #000000;
+    padding: 1rem;
+}
+
+.cartProduct, .cartPrice, .cartQty, .cartAvail, .cartDelete, .cartTotal
+{
+    width: 10%;
+}
+
+.cartDesc
+{
+    width: 40%;
+}
+
+.cartProduct, .cartDesc, .cartAvail, .cartPrice, .cartQty, .cartDelete, .cartTotal
+{
+    padding: 0.5rem;
+}
+
+.cartNav .cartProduct, .cartNav .cartAvail, .cartNav .cartPrice, .cartNav .cartQty, .cartNav .cartDelete, .cartNav .cartTotal
+{
+    /* cartBody columns titles*/
+    text-align: center;
+}
+
+.cartProduct img
+{
+width: 100%;
+}
+
+.cartDesc h4, .cartDesc p
+{
+    margin: 0;
+}
+
+div.available
+{
+    color: #2d995b;
+}
+
