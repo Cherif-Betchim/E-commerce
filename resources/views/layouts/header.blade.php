@@ -8,7 +8,7 @@
                 </li>
 
                 <li class="produits">
-                    <a href="produits.html" class="header-texte">PRODUITS</a>
+                    <a href="products" class="header-texte">PRODUITS</a>
 
                     <ul class="sous-menu-prod">
                         <li>
