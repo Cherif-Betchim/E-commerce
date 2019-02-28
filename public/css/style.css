@@ -1,0 +1,320 @@
+/******************************************************************
+    BASE
+******************************************************************/
+
+*{
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    color: #fff;
+    background: #3d4947;
+    margin: 0 auto;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.content{
+    flex-grow: 1;
+    width: 80%;
+    margin:auto;
+}
+
+.titre-principal{
+    font-family: 'Baumans';
+    font-weight: 400;
+    font-size: 100px;
+    color:#ecc502;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 0
+}
+
+.titre-secondaire{
+    font-family: 'Baumans';
+    font-weight: 400;
+    font-size: 60px;
+    color:#ecc502;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 0;
+    padding-top:50px;
+
+}
+
+.titre-trois{
+    font-family: 'Baumans';
+    font-weight: 400;
+    font-size: 40px;
+    color:#ecc502;
+    text-align: left;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.pseudo-element{
+    width: 100px;
+    height: 5px;
+    background: #ecc502;
+    margin: auto;
+    margin-bottom: 50px;
+}
+
+.italic{
+    font-style: italic;
+    color: #ecc502;
+    font-size: 13px;
+}
+
+.color-jaune{
+    color: #ecc502;
+}
+
+.color-gris{
+    color: #3d4947;
+}
+
+.btn{
+    text-decoration: none;
+    padding: 20px 60px;
+    background: #ecc502;
+    text-transform: uppercase;
+    color:#3d4947;
+    font-weight: 700;
+}
+
+.btn:hover{
+    transition: all ease-in-out 300ms;
+    background: none;
+    padding: 20px 60px;
+    border: 3px solid #ecc502;
+    color:#ecc502;
+}
+
+#myBtn{
+    width: 50px;
+    height: 50px;
+    border: 3px solid #ecc502;
+    border-radius: 50%;
+    background: none;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    cursor: pointer;
+}
+
+#myBtn img{
+    width: 20px;
+}
+
+
+/******************************************************************
+    Header - GENERAL
+******************************************************************/
+.header{
+    /*background: rgb(34, 34, 34);*/
+    background: #ecc502;
+    padding: 25px 0;
+    height: auto;
+    border-bottom: none;
+    width: 100%;
+}
+
+.header .logo img{
+    width: 100px;
+}
+
+.header .nav{
+    text-align: right;
+    float:right;
+    margin-top:30px;
+}
+
+.header .nav .menu .produits
+{
+  padding-bottom: 10px;
+}
+
+.header .nav .menu .team
+{
+  padding-bottom: 10px;
+}
+
+.header .nav li{
+    display: inline-block;
+    margin-right: 70px;
+}
+
+.header .nav li a{
+    text-decoration: none;
+    text-transform: uppercase;
+    color:#3d4947;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.header .nav li a:hover{
+    border-bottom: 3px solid white;
+    transition: all linear 100ms;
+    color: white;
+}
+
+.header-picto
+{
+  display: none;
+}
+
+.sous-menu-prod
+{
+  display: none;
+  position: absolute;
+  background-color: #ecc502;
+  margin-top: 3px;
+  text-align: left;
+  width: 45vw;
+  right: 0;
+}
+
+.header .nav .produits:hover .sous-menu-prod
+{
+  display: inline-block;
+}
+
+
+.sous-menu-team
+{
+  display: none;
+  position: absolute;
+  background-color: #ecc502;
+  margin-top: 3px;
+  text-align: left;
+  width: 40vw;
+  right: 0;
+}
+
+.header .nav .team:hover .sous-menu-team
+{
+  display: inline-block;
+}
+
+/******************************************************************
+    HOME - Welcome
+******************************************************************/
+.welcome{
+    background: url(../img/background-welcome03.jpg) no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 750px;
+}
+
+.welcome .container{
+    display: flex;
+    width: 100%
+}
+
+.welcome .opacity{
+    width: 100%;
+    height: 750px;
+    background-color:rgba(0, 0, 0, 0.5);
+    display: flex;
+}
+
+.welcome .titre-principal{
+    text-transform: none;
+    text-align: right;
+    margin-top: 240px;
+}
+
+.welcome .welcome-text{
+    margin-top: 380px;
+    font-size: 34px;
+
+}
+
+.welcome .opacity .block-gauche{
+    width: 48%;
+    margin-right: 50px;
+    text-align: center;
+}
+
+.welcome .opacity .block-droite{
+    display: inline-block;
+    width: 48%;
+}
+
+
+/******************************************************************
+    Footer - General
+******************************************************************/
+.footer{
+    background: #ecc502;
+    padding: 20px 0;
+}
+
+.footer .container{
+    display: flex;
+}
+
+.footer .logo{
+    display: inline-block;
+    margin: 0 auto;
+}
+
+.footer .logo img{
+    width: 150px;
+}
+
+.footer .rs{
+    display: inline-block;
+    margin: 0 auto;
+    padding-top: 50px;
+}
+
+.footer .rs .footer-picto{
+    text-decoration: none;
+    margin-right: 20px;
+    text-align: center;
+}
+
+.footer .rs .footer-picto img{
+    width: 50px
+}
+
+.footer .rs .white{
+    display: none;
+}
+
+.footer .rs a:hover .black{
+    display: none;
+}
+
+.footer .rs a:hover .white{
+    display: inline-block;
+}
+
+.footer .mention-legale{
+    display: inline-block;
+    margin: 0 auto;
+    padding-top: 70px;
+}
+
+.footer .mention-legale a{
+    text-decoration: none;
+    color: #000;
+}
+
+.footer .mention-legale a:hover{
+    border-bottom: 3px solid #fff;
+    transition: all linear 200ms;
+    color:#fff;
+}
+
+
+
+
