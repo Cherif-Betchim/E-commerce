@@ -319,15 +319,24 @@ body {
   JEROME - PRODUITS
 ******************************************************************/
 
+article{
+    display:flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-bottom: 50px;
+    border-bottom: solid;
+}
 
 
-.Product img{
-    width: 15%;
+article img{
+    width: 10%;
+    height: 10%;
     margin-top: 20px;
+    margin-bottom: 20px;
 
 }
 
-.cartProduct{
-    margin-bottom: 50px;
-    border-bottom: solid;
+.Psubmit{
+    margin-left: 84%;
+    margin-bottom: 20px;
 }
