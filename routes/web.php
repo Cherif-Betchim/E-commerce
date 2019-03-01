@@ -15,6 +15,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+<<<<<<< HEAD
 Route::get('/my-account', function () {
     return view('my-account');
 });
+=======
+Route::get('/cart', 'CartController@show');
+>>>>>>> master
