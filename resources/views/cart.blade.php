@@ -12,7 +12,9 @@
         <h3>Adresse</h3>
         <h3>Livraison</h3>
         <h3>Connexion</h3>
-        <h3>Paiement</h3>
+        <h3>
+            <a href="/checkout">Paiement</a>
+        </h3>
     </div>
 
     <div class="cartBody">
