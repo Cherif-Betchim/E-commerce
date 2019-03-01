@@ -1,13 +1,40 @@
 /*----------------------------------------------*/
+/*                   GÉNÉRAL                    */
+/*----------------------------------------------*/
+
+a{
+    text-decoration: none;
+    color: #000;
+}
+
+
+/*----------------------------------------------*/
 /*              FLEX DECLARATIONS               */
 /*----------------------------------------------*/
 
-.cartNav, .cartProductList
+.cartNav, .cartProductList, .cartFooter
 {
     display: flex;
     flex-direction: row;
-    flex-wrap: nowrap;
 }
+
+.cartProductList .cartProduct, .cartProductList .cartAvail, .cartProductList .cartPrice, .cartProductList .cartQty, .cartProductList .cartDelete, .cartProductList .cartTotal
+{
+    /* all cartProductList elements but cartDesc */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.cartNav h3, .cartFooter div
+{
+    flex-grow: 1;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
 
 
 /*----------------------------------------------*/
@@ -16,9 +43,7 @@
 
 .cartNav h3
 {
-    flex-grow: 1;
     padding: 1rem;
-    text-align: center;
 }
 
 .cartNav h3.selected
@@ -38,25 +63,31 @@
     width: 10%;
 }
 
-.cartDesc
+.cartDelete
 {
-    width: 40%;
+    width: 5%;
 }
 
-.cartProduct, .cartDesc, .cartAvail, .cartPrice, .cartQty, .cartDelete, .cartTotal
+.cartDesc
 {
+    width: 45%;
+}
+
+.cartProductList .cartProduct, .cartProductList .cartDesc, .cartProductList .cartAvail, .cartProductList .cartPrice, .cartProductList .cartQty, .cartProductList .cartDelete, .cartProductList .cartTotal
+{
+    /* all cartBody elements */
     padding: 0.5rem;
 }
 
 .cartNav .cartProduct, .cartNav .cartAvail, .cartNav .cartPrice, .cartNav .cartQty, .cartNav .cartDelete, .cartNav .cartTotal
 {
-    /* cartBody columns titles*/
+    /* cartBody columns titles (all but cartDesc) */
     text-align: center;
 }
 
 .cartProduct img
 {
-width: 100%;
+    width: 100%;
 }
 
 .cartDesc h4, .cartDesc p
@@ -64,8 +95,45 @@ width: 100%;
     margin: 0;
 }
 
-div.available
+div.available i.available
 {
     color: #2d995b;
 }
 
+div.notavailable i.notavailable
+{
+    color: #761b18;
+}
+
+div.available i.notavailable
+{
+    display: none;
+}
+
+div.notavailable i.available
+{
+    display: none;
+}
+
+.cartValidation
+{
+    text-align: right;
+    margin-top: 1rem;
+}
+
+.cartValidation div
+{
+    padding: 0.2rem;
+}
+
+.cartValidation button[type="submit"]
+{
+    padding: 1rem;
+    font-size: 1rem;
+    margin: 0.5rem;
+}
+
+.cartFooter
+{
+    margin-bottom: 2rem;
+}

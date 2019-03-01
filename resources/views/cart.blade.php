@@ -25,23 +25,54 @@
             <div class="cartDelete"></div>
             <div class="cartTotal">Total</div>
         </div>
-        <div class="cartProductList">
-            <div class="cartProduct">
-                <img src="{{asset('img/cart/sun.jpg')}}">
+        @foreach($chosenArticles as $article)
+            <div class="cartProductList">
+                <div class="cartProduct">
+                    <img src="{{asset($article['img'])}}">
+                </div>
+                <div class="cartDesc">
+                    <h4>
+                        <a href="/products/{{$article['id']}}">{{$article['name']}}</a>
+                    </h4>
+                    <p>{{$article['description']}}</p>
+                </div>
+                <div class="cartAvail {{$article['availability']}}">
+                    <i class="far fa-check-circle available"></i>
+                    <i class="far fa-times-circle notavailable"></i>
+                </div>
+                <div class="cartPrice">{{$article['price']}}€</div>
+                <div class="cartQty">
+                    <input type="number" value="{{$article['quantity']}}">
+                </div>
+                <div class="cartDelete">
+                    <i class="far fa-trash-alt"></i>
+                </div>
+                <div class="cartTotal">
+                    <strong>{{$article['price']*$article['quantity']}}€</strong>
+                </div>
             </div>
-            <div class="cartDesc">
-                <h4>Soleil sans nuage</h4>
-                <p>Un superbe soleil à emmener partout avec vous pour ne jamais avoir un temps tout pourri démoralisant. Attention, très lumineux. (Et très chaud.)</p>
-            </div>
-            <div class="cartAvail available">
-                <i class="far fa-check-circle"></i>
-            </div>
-            <div class="cartPrice"></div>
-            <div class="cartQty"></div>
-            <div class="cartDelete"></div>
-            <div class="cartTotal"></div>
+        @endforeach
+    </div>
+
+    <div class="cartValidation">
+        <div>
+            <label for="promo">Code promo : </label><input type="text" id="promo">
+        </div>
+        <div>
+            <strong>Total de la commande : {{$totalPrice}}€</strong>
+        </div>
+        <div>
+            <button type="submit">Valider le panier</button>
         </div>
     </div>
 
+    <div class="cartFooter">
+        <div>
+            <a href="/products">Continuer mes achats</a>
+        </div>
+        <div>
+            <a href="">Sauvegarder mon panier</a>
+        </div>
+    </div>
 
 @endsection
