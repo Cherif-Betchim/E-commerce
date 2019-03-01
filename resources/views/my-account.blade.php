@@ -54,7 +54,7 @@
                 </div>
             </div>
         </div>
-        <h2 class="titre-secondaire">Vos moyens de paiements</h2>
+        <h2>Vos moyens de paiements</h2>
         <div class="payment">
             <div class="view-payment">
                 <div class="registered">
@@ -126,7 +126,7 @@
                     </p>
                 </div>
             </div>
-            <h3 class="titre-trois">Toutes vos commandes</h3>
+            <h3>Toutes vos commandes</h3>
             <div class="all-orders">
                 {{-- Affichage de toutes les commandes passées --}}
                 <div class="orders-ref">
