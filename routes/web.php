@@ -17,7 +17,7 @@ Route::get('/', function () {
 
 
 
-Route::get('/','CheckoutController@show');
+Route::get('/checkout','CheckoutController@show');
 
 Route::get('/products', 'ProductsController@show');
 
