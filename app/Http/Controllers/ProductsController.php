@@ -24,6 +24,11 @@ class ProductsController extends Controller
             'img' => 'https://www.laboutiquedesabbayes.com/224-large_default/elixir-vegetal-chartreuse.jpg',
             'name' => 'Elixir de Chatreuse',
             'price' => '50'
+        ],
+        [
+            'name' => 'Canard',
+            'img' => 'https://images-eu.ssl-images-amazon.com/images/I/41sfz8dKX1L._AC_US218_.jpg',
+            'price' => '99999'
         ]
     ];
 
