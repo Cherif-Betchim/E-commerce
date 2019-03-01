@@ -26,21 +26,17 @@ body {
 }
 
 .titre-principal{
-    font-family: 'Baumans';
     font-weight: 400;
     font-size: 100px;
     color:#313238;
-    text-transform: uppercase;
     text-align: center;
     margin: 0
 }
 
 .titre-secondaire{
-    font-family: 'Baumans';
     font-weight: 400;
     font-size: 60px;
     color:#313238;
-    text-transform: uppercase;
     text-align: center;
     margin: 0;
     padding-top:50px;
@@ -48,12 +44,10 @@ body {
 }
 
 .titre-trois{
-    font-family: 'Baumans';
     font-weight: 400;
     font-size: 40px;
     color:#313238;
     text-align: left;
-    text-transform: uppercase;
     margin: 0;
 }
 
@@ -84,8 +78,13 @@ body {
     padding: 20px 60px;
     background: #313238;
     text-transform: uppercase;
-    color:#3d4947;
+    color:#fff;
     font-weight: 700;
+    border:3px solid #313238;;
+}
+
+.container-btn{
+    text-align: center;
 }
 
 .btn:hover{
@@ -336,8 +335,6 @@ font-size: 66px;
 
 }
 
-
-
 article{
     display:flex;
     justify-content: space-around;
@@ -362,7 +359,7 @@ article h2{
     padding: 15px;
     display: inline-block;
     border-radius: 50%;
-    font: black;
+    font-color: black;
 }
 
 .Psubmit {
@@ -386,8 +383,199 @@ article h2{
     text-shadow: 0px -2px black;
 }
 
-.Psubmit input:active
-{
-    transform: translate(0px,5px);
+.Psubmit input:active {
+    transform: translate(0px, 5px);
     border-bottom: 1px solid;
+}
+
+/******************************************************************
+    My Account
+******************************************************************/
+.my-data .view-data{
+    margin-bottom: 100px;
+    display: flex;
+}
+
+.my-data .view-data .view-civilite{
+    width: 48%;
+    margin-right: 2%;
+}
+
+.my-data .view-data .view-login{
+    width: 48%;
+}
+
+.my-data .view-data .view-civilite p{
+    margin-bottom: 20px;
+}
+
+.my-data .payment{
+    display: flex;
+    margin-bottom: 100px;
+}
+
+.my-data .view-payment{
+    width: 48%;
+    margin-right: 2%;
+}
+
+.my-data .add-payment{
+    width: 48%;
+}
+
+.my-data .add-payment form{
+    width: 100%;
+}
+
+.my-data .add-payment .num-and-owner{
+    display: flex;
+    margin-bottom: 20px;
+
+}
+
+.my-data .add-payment .num-and-owner .num-cart{
+    width: 48%;
+    margin-right: 2%;
+}
+
+.my-data .add-payment .num-and-owner .num-cart label{
+    display: block;
+    margin-bottom: 5px;
+}
+
+.my-data .add-payment .num-and-owner .num-cart input{
+    width: 100%;
+    padding: 10px;
+    background: #313238;
+    border:none;
+    color:#fff;
+}
+
+.my-data .add-payment .num-and-owner .owner-cart{
+    width: 48%;
+}
+
+.my-data .add-payment .num-and-owner .owner-cart label{
+    display: block;
+    margin-bottom: 5px;
+}
+
+.my-data .add-payment .num-and-owner .owner-cart input{
+    width: 100%;
+    padding: 10px;
+    background: #313238;
+    border:none;
+    color:#fff;
+}
+
+.my-data .add-payment .expiration-and-security{
+    display: flex;
+    margin-bottom: 50px;
+
+}
+
+.my-data .add-payment .expiration-and-security .month-cart{
+    width: 32%;
+    margin-right: 2%;
+}
+
+.my-data .add-payment .expiration-and-security .month-cart label{
+    display: block;
+    margin-bottom: 5px;
+}
+
+.my-data .add-payment .expiration-and-security .month-cart input{
+    width: 100%;
+    padding: 10px;
+    background: #313238;
+    border:none;
+    color:#fff;
+}
+
+.my-data .add-payment .expiration-and-security .year-cart{
+    width: 32%;
+    margin-right: 2%;
+}
+
+.my-data .add-payment .expiration-and-security .year-cart label{
+    display: block;
+    margin-bottom: 5px;
+}
+
+.my-data .add-payment .expiration-and-security .year-cart input{
+    width: 100%;
+    padding: 10px;
+    background: #313238;
+    border:none;
+    color:#fff;
+}
+
+
+.my-data .add-payment .expiration-and-security .security-cart{
+    width: 32%;
+    margin-right: 2%;
+}
+
+.my-data .add-payment .expiration-and-security .security-cart label{
+    display: block;
+    margin-bottom: 5px;
+}
+
+.my-data .add-payment .expiration-and-security .security-cart input{
+    width: 100%;
+    padding: 10px;
+    background: #313238;
+    border:none;
+    color:#fff;
+}
+
+.my-data .add-payment .btn{
+    margin: auto
+}
+
+.my-data .orders .recent-orders{
+    display: flex;
+    margin-bottom: 50px;
+}
+
+
+.my-data .orders .recent-orders .orders-img{
+    width: 31%;
+    margin-right: 2%;
+}
+
+.my-data .orders .recent-orders .orders-ref{
+    width: 31%;
+    margin-right: 2%;
+}
+
+.my-data .orders .recent-orders .orders-product-desc{
+    width: 31%;
+}
+
+.my-data .orders .recent-orders .orders-tota{
+    width: 31%;
+}
+
+.my-data .orders .all-orders{
+    display: flex;
+}
+
+.my-data .orders .all-orders .orders-ref{
+    width: 31%;
+    margin-right: 2%;
+}
+
+.my-data .orders .all-orders .orders-product-desc{
+    width: 31%;
+    margin-right: 2%;
+}
+
+.my-data .orders .all-orders .orders-price{
+    width: 31%;
+}
+
+.my-data .orders .return-product{
+    margin-bottom: 100px;
+
 }

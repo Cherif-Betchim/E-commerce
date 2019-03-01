@@ -15,4 +15,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
 Route::get('/products', 'ProductsController@show');
+
+
+Route::get('/my-account', function () {
+    return view('my-account');
+});
+
+Route::get('/cart', 'CartController@show');
+
