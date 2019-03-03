@@ -3,5 +3,7 @@
 @section('title','Accueil')
 
 @section('content')
-    <h1>Bienvenue sur notre super boutique !</h1>
+    <div class="welcome">
+    <h1>Bienvenue sur notre site ILOT-3 !</h1>
+    </div>
 @endsection

@@ -1,6 +1,6 @@
 @extends('layouts.layout')
 
-@section('title','Accueil')
+@section('title','CGV')
 
 @section('content')
     <div class="cgv">

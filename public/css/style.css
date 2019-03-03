@@ -10,8 +10,8 @@ body {
     font-family: 'Montserrat', sans-serif;
     font-weight: 500;
     font-size: 20px;
-    color: #fff;
-    background: #d2d2d2;
+    color: black;
+    background: url("../../img/logo/EClara.png") fixed;
     margin: 0 auto;
     min-height: 100vh;
     display: flex;
@@ -140,7 +140,6 @@ body {
 
 .header-texte{
     color: white;
-    font-family: Javanese Text;
 }
 
 .header .nav{
@@ -219,48 +218,11 @@ body {
 /******************************************************************
     HOME - Welcome
 ******************************************************************/
-.welcome{
-    background: url(../img/background-welcome03.jpg) no-repeat;
-    background-size: cover;
-    width: 100%;
-    height: 750px;
-}
-
-.welcome .container{
-    display: flex;
-    width: 100%
-}
-
-.welcome .opacity{
-    width: 100%;
-    height: 750px;
-    background-color:rgba(0, 0, 0, 0.5);
-    display: flex;
-}
-
-.welcome .titre-principal{
-    text-transform: none;
-    text-align: right;
-    margin-top: 240px;
-}
-
-.welcome .welcome-text{
-    margin-top: 380px;
-    font-size: 34px;
-
-}
-
-.welcome .opacity .block-gauche{
-    width: 48%;
-    margin-right: 50px;
+.welcome h1{
     text-align: center;
+    color: #16181b;
+    margin-top: 50px;
 }
-
-.welcome .opacity .block-droite{
-    display: inline-block;
-    width: 48%;
-}
-
 
 /******************************************************************
     Footer - General
@@ -268,12 +230,17 @@ body {
 .footer{
     background: #313238;
     padding: 20px 0;
+    color: whitesmoke;
 }
 
 .footer .container{
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+}
+
+.footer ul{
+    font-size: 15px;
 }
 
 .footer .logo{
