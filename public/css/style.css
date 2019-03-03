@@ -116,6 +116,13 @@ body {
 /******************************************************************
     Header - GENERAL
 ******************************************************************/
+.container-fluid{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
 .header{
     /*background: rgb(34, 34, 34);*/
     background: #313238;
@@ -126,7 +133,14 @@ body {
 }
 
 .header .logo img{
+    margin-left: 40px;
     width: 100px;
+    float: left;
+}
+
+.header-texte{
+    color: white;
+    font-family: Javanese Text;
 }
 
 .header .nav{
@@ -258,6 +272,8 @@ body {
 
 .footer .container{
     display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .footer .logo{
@@ -266,13 +282,13 @@ body {
 }
 
 .footer .logo img{
-    width: 150px;
+    width: 300px;
 }
 
 .footer .rs{
     display: inline-block;
     margin: 0 auto;
-    padding-top: 50px;
+    padding: 10px;
 }
 
 .footer .rs .footer-picto{
@@ -282,7 +298,8 @@ body {
 }
 
 .footer .rs .footer-picto img{
-    width: 50px
+    width: 50px;
+    padding-left:10px ;
 }
 
 .footer .rs .white{
@@ -297,10 +314,9 @@ body {
     display: inline-block;
 }
 
-.footer .mention-legale{
+.footer .infos{
     display: inline-block;
     margin: 0 auto;
-    padding-top: 70px;
 }
 
 .footer .mention-legale a{

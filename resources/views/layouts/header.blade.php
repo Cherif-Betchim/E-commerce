@@ -1,12 +1,11 @@
 <header class="header">
     <div class="container-fluid">
         <a href="/" class="logo" title="Logo"><img src="{{asset('img/logo/logo.png')}}" alt="logo"></a>
+        <h1>
+            <a href="/" class="header-texte">LARAVEL E-COMMERCE</a>
+        </h1>
         <nav class="nav">
             <ul class="menu">
-                <li>
-                    <a href="/" class="header-texte">Laravel e-commerce</a>
-                </li>
-
                 <li class="produits">
 
                     <a href="/products" class="header-texte">PRODUITS</a>
