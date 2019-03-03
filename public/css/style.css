@@ -586,3 +586,45 @@ article .checkbox{
 .cgv li {
     font-size: 15px;
 }
+
+/******************************************************************
+    Contact
+******************************************************************/
+
+.formulaire{
+    display: flex;
+    justify-content: space-around;
+    width: 80%;
+    flex-wrap: wrap;
+}
+
+.formulaire span{
+    color: red;
+    font-size: 18px;
+}
+
+.contact input[type="text"], .contact input[type="email"], .contact input[type="tel"], .contact textarea{
+    height: 80%;
+    width: 100%;
+    border-radius:10px;
+    resize: vertical;
+    font-family: 'Lato';
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.contact textarea {
+    width: 200%;
+    height: 200px;
+
+}
+
+.coordonnees{
+     display: flex;
+     flex-direction: column;
+ }
+
+.demande{
+    display: flex;
+    flex-direction: column;
+}

@@ -30,4 +30,4 @@ Route::get('/cart', 'CartController@show');
 
 Route::get('/cgv', 'CgvController@show');
 
-
+Route::get('/contact', 'ContactController@show');
