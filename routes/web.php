@@ -28,4 +28,6 @@ Route::get('/my-account', function () {
 
 Route::get('/cart', 'CartController@show');
 
+Route::get('/cgv', 'CgvController@show');
+
 
