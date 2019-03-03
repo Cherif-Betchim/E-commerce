@@ -11,17 +11,17 @@ class ProductsController extends Controller
 
     $pAllProducts =[
         [
-            'img' => 'https://cdn1.papadrinks.com/1580-medium_default/xchartreuse-jaune.jpg.pagespeed.ic.tUcYRcePXR.jpg',
+            'img' => '/img/products/jaune.png',
             'name' => 'Chartreuse Jaune',
             'price' => '10'
         ],
         [
-            'img' => 'https://www.vinatis.com/24933-detail_default/chartreuse-verte-.png',
+            'img' => 'img/products/verte.png',
             'name' => 'Chartreuse Verte',
             'price' => '20'
         ],
         [
-            'img' => 'https://www.laboutiquedesabbayes.com/224-large_default/elixir-vegetal-chartreuse.jpg',
+            'img' => 'img/products/elixir.png',
             'name' => 'Elixir de Chatreuse',
             'price' => '50'
         ],

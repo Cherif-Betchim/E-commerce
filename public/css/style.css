@@ -337,12 +337,20 @@ article img{
     margin:20px;
 }
 
+article img:hover{
+    transform: scale(1.5);
+}
+
 article h2{
     background-color: white ;
     padding: 15px;
     display: inline-block;
     border-radius: 50%;
     font-color: black;
+}
+
+article .checkbox{
+    transform: scale(1.5);
 }
 
 .Psubmit {
