@@ -35,7 +35,7 @@ class CartController extends Controller
         {
             $pTotalPrice = $pTotalPrice + ($pArticle['price']*$pArticle['quantity']);
         }
-
+        
         return view('cart', [
             'chosenArticles' => $pChosenArticles,
             'totalPrice' => $pTotalPrice
