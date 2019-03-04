@@ -284,6 +284,7 @@ body {
 .footer .infos{
     display: inline-block;
     margin: 0 auto;
+    color: white;
 }
 
 .footer .mention-legale a{
@@ -297,6 +298,9 @@ body {
     color:#fff;
 }
 
+.footer .infos ul li a{
+    color:whitesmoke;
+}
 /******************************************************************
   JEROME - PRODUITS
 ******************************************************************/

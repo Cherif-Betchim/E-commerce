@@ -6,9 +6,9 @@
 
     <h1>SERVICE CLIENT - CONTACTEZ-NOUS</h1>
     <div class="contact">
-        <form class="formulaire" method="post" action="https://httpbin.org/post">
+        <form class="formulaire" method="post" action="/results">
         <div class="coordonnees">
-
+            {{ csrf_field() }}
             <h2>  Vos coordonnées </h2>
             <p>
                 <label>
@@ -45,12 +45,12 @@
             </label>
             <select id="interest" name="interest" class="list">
                 <option value="ras">Selectionner</option>
-                <option value="1">Commande</option>
-                <option value="2">Paiement</option>
-                <option value="3">Livraison</option>
-                <option value="4">Gestion du compte</option>
-                <option value="5">Retour & Reclamation</option>
-                <option value="6">Webmaster</option>
+                <option value="Commande">Commande</option>
+                <option value="Paiement">Paiement</option>
+                <option value="Livraison">Livraison</option>
+                <option value="Gestion du compte"></option>
+                <option value="Retour & Reclamation">Retour & Reclamation</option>
+                <option value="Webmaster">Webmaster</option>
             </select>
             </p>
             <p>
