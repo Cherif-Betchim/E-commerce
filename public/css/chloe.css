@@ -7,10 +7,45 @@ a{
     color: #000;
 }
 
+/*----------------------------------------------*/
+/*                  PRODUCTS                    */
+/*----------------------------------------------*/
+
+h1 {
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: 1rem;
+    margin-bottom: 3rem;
+}
+
+article {
+    margin-bottom: 1rem;
+}
+article img {
+    width: 100%;
+}
+
+article .description {
+    max-height: 100px;
+    overflow: auto;
+}
+
+p.addToBasket {
+    text-align: right;
+}
+
+button[type="submit"].productsForm
+{
+    position: fixed;
+    top: 20%;
+    left: 50px;
+}
 
 /*----------------------------------------------*/
-/*              FLEX DECLARATIONS               */
+/*                      CART                    */
 /*----------------------------------------------*/
+
+/*              FLEX DECLARATIONS               */
 
 .cartNav, .cartProductList, .cartFooter
 {
@@ -36,10 +71,7 @@ a{
 }
 
 
-
-/*----------------------------------------------*/
-/*                      ELSE                    */
-/*----------------------------------------------*/
+/*                  ELSE                  */
 
 .cartNav h3
 {
