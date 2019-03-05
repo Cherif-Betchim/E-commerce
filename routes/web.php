@@ -19,7 +19,8 @@ Route::get('/', function () {
 
 Route::get('/checkout','CheckoutController@show');
 
-Route::get('/products', 'ProductsController@show');
+Route::get('/products', 'ProductController@index');
+Route::get('/products/{id}', 'ProductController@show');
 
 
 Route::get('/my-account', function () {
