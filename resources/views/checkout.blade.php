@@ -1,6 +1,11 @@
 @extends('layouts.layout')
 
 @section('title','Accueil')
+
+@section('cssperso')
+    <link rel="stylesheet" href="{{ asset('css/checkout.css') }}">
+@endsection
+
 @section('content')
 
 

@@ -2,6 +2,10 @@
 
 @section('title','Accueil')
 
+@section('cssperso')
+    <link rel="stylesheet" href="{{ asset('css/tommy.css') }}">
+@endsection
+
 @section('content')
     <div class="title m-b-md">
         <h1>Mon compte</h1>
