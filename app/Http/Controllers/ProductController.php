@@ -49,7 +49,11 @@ class ProductController extends Controller
      */
     public function show($id)
     {
-        return view('show', $id);
+        $pProduct = DB::select('select * from products where products.id = ?', [$id]);
+
+        return view('product.show', [
+            'product' => $pProduct[0]
+        ]);
     }
 
     /**

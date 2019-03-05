@@ -2,44 +2,71 @@
 /*                   GÉNÉRAL                    */
 /*----------------------------------------------*/
 
-a{
+a
+{
     text-decoration: none;
+}
+
+a, a:hover
+{
     color: #000;
 }
 
-/*----------------------------------------------*/
-/*                  PRODUCTS                    */
-/*----------------------------------------------*/
-
-h1 {
+h1
+{
     text-align: center;
     text-transform: uppercase;
     margin-top: 1rem;
     margin-bottom: 3rem;
 }
 
-article {
-    margin-bottom: 1rem;
-}
-article img {
+
+/*----------------------------------------------*/
+/*                  PRODUCTS                    */
+/*----------------------------------------------*/
+
+/*                  Both                        */
+
+article img
+{
     width: 100%;
 }
 
-article .description {
+article
+{
+    margin-bottom: 1rem;
+}
+
+
+/*                  Index                       */
+
+.productIndex article .description
+{
     max-height: 100px;
     overflow: auto;
 }
 
-p.addToBasket {
+p.addToBasket
+{
     text-align: right;
 }
 
-button[type="submit"].productsForm
+.productIndex button[type="submit"]
 {
     position: fixed;
     top: 20%;
     left: 50px;
 }
+
+
+/*                  Show                       */
+
+.productShow article .description
+{
+    max-height: 300px;
+    overflow: auto;
+}
+
 
 /*----------------------------------------------*/
 /*                      CART                    */
