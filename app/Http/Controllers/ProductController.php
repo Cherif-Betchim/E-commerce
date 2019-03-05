@@ -15,7 +15,7 @@ class ProductController extends Controller
     public function index()
     {
         $pProducts = DB::select('select * from products');
-        return view('products', [
+        return view('product.index', [
             'products' => $pProducts
         ]);
     }
