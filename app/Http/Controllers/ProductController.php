@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+use App\Product;
 
 class ProductController extends Controller
 {
@@ -14,10 +15,8 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $pProducts = DB::select('select * from products');
-        return view('product.index', [
-            'products' => $pProducts
-        ]);
+        $products = Product::all();
+        return view('product.index', ['products' => $products]);
     }
 
     /**
@@ -49,11 +48,9 @@ class ProductController extends Controller
      */
     public function show($id)
     {
-        $pProduct = DB::select('select * from products where products.id = ?', [$id]);
+        $product = Product::find($id);
 
-        return view('product.show', [
-            'product' => $pProduct[0]
-        ]);
+        return view('product.show', ['product' => $product]);
     }
 
     /**
