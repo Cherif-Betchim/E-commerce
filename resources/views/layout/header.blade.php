@@ -1,4 +1,4 @@
-<header class="header">
+<header>
     <div class="container-fluid">
         <a href="/" class="logo" title="Logo"><img src="{{asset('img/logo/logo.png')}}" alt="logo"></a>
         <h1>

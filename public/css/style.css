@@ -123,16 +123,17 @@ body {
     flex-wrap: wrap;
 }
 
-.header{
+header{
     /*background: rgb(34, 34, 34);*/
     background: #313238;
     padding: 25px 0;
     height: auto;
     border-bottom: none;
     width: 100%;
+    margin-bottom: 2rem;
 }
 
-.header .logo img{
+header .logo img{
     margin-left: 40px;
     width: 100px;
     float: left;
@@ -142,28 +143,28 @@ body {
     color: white;
 }
 
-.header .nav{
+header .nav{
     text-align: right;
     float:right;
     margin-top:30px;
 }
 
-.header .nav .menu .produits
+header .nav .menu .produits
 {
   padding-bottom: 10px;
 }
 
-.header .nav .menu .team
+header .nav .menu .team
 {
   padding-bottom: 10px;
 }
 
-.header .nav li{
+header .nav li{
     display: inline-block;
     margin-right: 70px;
 }
 
-.header .nav li a{
+header .nav li a{
     text-decoration: none;
     text-transform: uppercase;
     color:#fff;
@@ -171,7 +172,7 @@ body {
     font-size: 20px;
 }
 
-.header .nav li a:hover{
+header .nav li a:hover{
     border-bottom: 3px solid white;
     transition: all linear 100ms;
     color: white;
@@ -193,7 +194,7 @@ body {
   right: 0;
 }
 
-.header .nav .produits:hover .sous-menu-prod
+header .nav .produits:hover .sous-menu-prod
 {
   display: inline-block;
 }
@@ -210,7 +211,7 @@ body {
   right: 0;
 }
 
-.header .nav .team:hover .sous-menu-team
+header .nav .team:hover .sous-menu-team
 {
   display: inline-block;
 }
@@ -227,77 +228,78 @@ body {
 /******************************************************************
     Footer - General
 ******************************************************************/
-.footer{
+footer{
     background: #313238;
     padding: 20px 0;
     color: whitesmoke;
+    margin-top: 2rem;
 }
 
-.footer .container{
+footer .container{
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
 }
 
-.footer ul{
+footer ul{
     font-size: 15px;
 }
 
-.footer .logo{
+footer .logo{
     display: inline-block;
     margin: 0 auto;
 }
 
-.footer .logo img{
+footer .logo img{
     width: 300px;
 }
 
-.footer .rs{
+footer .rs{
     display: inline-block;
     margin: 0 auto;
     padding: 10px;
 }
 
-.footer .rs .footer-picto{
+footer .rs .footer-picto{
     text-decoration: none;
     margin-right: 20px;
     text-align: center;
 }
 
-.footer .rs .footer-picto img{
+footer .rs .footer-picto img{
     width: 50px;
     padding-left:10px ;
 }
 
-.footer .rs .white{
+footer .rs .white{
     display: none;
 }
 
-.footer .rs a:hover .black{
+footer .rs a:hover .black{
     display: none;
 }
 
-.footer .rs a:hover .white{
+footer .rs a:hover .white{
     display: inline-block;
 }
 
-.footer .infos{
+footer .infos{
     display: inline-block;
     margin: 0 auto;
     color: white;
 }
 
-.footer .mention-legale a{
+footer .mention-legale a{
     text-decoration: none;
     color: #000;
 }
 
-.footer .mention-legale a:hover{
+footer .mention-legale a:hover{
     border-bottom: 3px solid #fff;
     transition: all linear 200ms;
     color:#fff;
 }
 
-.footer .infos ul li a{
+footer .infos ul li a{
     color:whitesmoke;
 }
