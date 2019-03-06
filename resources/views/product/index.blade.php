@@ -11,7 +11,23 @@
 
     <div class="container productIndex">
         <h1>Breath Yoga (or don't breath at all)</h1>
+
         <form action="basket.php" method="post">
+            <div class="buttons">
+                <p>
+                    <button type="submit">Valider mon panier</button>
+                </p>
+                <p>
+                    <a href="{{ route('product.index', ['sort' => 'name']) }}" class="btn btn-primary">Tri par nom</a>
+                </p>
+                <p>
+                    <a href="{{ route('product.index', ['sort' => 'price']) }}" class="btn btn-dark">Tri par prix croissant</a>
+                </p>
+                <p>
+                    <a href="{{ route('product.index') }}">Ne pas trier</a>
+                </p>
+            </div>
+
             <div class="row">
 
                 @foreach ($products as $product)
@@ -41,11 +57,6 @@
 
                 @endforeach
 
-            </div>
-            <div>
-                <p>
-                    <button type="submit">Voir mon panier</button>
-                </p>
             </div>
         </form>
     </div>

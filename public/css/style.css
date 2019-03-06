@@ -73,27 +73,27 @@ body {
     color: #3d4947;
 }
 
-.btn{
-    text-decoration: none;
-    padding: 20px 60px;
-    background: #313238;
-    text-transform: uppercase;
-    color:#fff;
-    font-weight: 700;
-    border:3px solid #313238;;
-}
+/*.btn{*/
+    /*text-decoration: none;*/
+    /*padding: 20px 60px;*/
+    /*background: #313238;*/
+    /*text-transform: uppercase;*/
+    /*color:#fff;*/
+    /*font-weight: 700;*/
+    /*border:3px solid #313238;;*/
+/*}*/
 
 .container-btn{
     text-align: center;
 }
 
-.btn:hover{
-    transition: all ease-in-out 300ms;
-    background: none;
-    padding: 20px 60px;
-    border: 3px solid #313238;
-    color:#313238;
-}
+/*.btn:hover{*/
+    /*transition: all ease-in-out 300ms;*/
+    /*background: none;*/
+    /*padding: 20px 60px;*/
+    /*border: 3px solid #313238;*/
+    /*color:#313238;*/
+/*}*/
 
 #myBtn{
     width: 50px;
