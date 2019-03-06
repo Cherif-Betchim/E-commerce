@@ -19,8 +19,17 @@ Route::get('/', function () {
 
 Route::get('/checkout','CheckoutController@show');
 
+//-------------------------------------------------------------------
+//                          ProductController
+//-------------------------------------------------------------------
+
+//                                  - read
 Route::get('/products', 'ProductController@index')->name('product.index');
-Route::get('/products/{id}', 'ProductController@show');
+Route::get('/products/product/{id}', 'ProductController@show')->name('product.show');
+
+//                                  - create
+Route::get('/products/create', 'ProductController@create')->name('product.create');
+Route::post('/products', 'ProductController@store')->name('product.store');
 
 
 Route::get('/my-account', function () {
@@ -32,4 +41,5 @@ Route::get('/cart', 'CartController@show');
 Route::get('/cgv', 'CgvController@show');
 
 Route::get('/contact', 'ContactController@show');
+
 Route::post('/results', 'ResultsController@store');

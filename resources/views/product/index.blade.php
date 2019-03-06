@@ -12,22 +12,22 @@
     <div class="container productIndex">
         <h1>Breath Yoga (or don't breath at all)</h1>
 
-        <form action="basket.php" method="post">
-            <div class="buttons">
-                <p>
-                    <button type="submit">Valider mon panier</button>
-                </p>
-                <p>
-                    <a href="{{ route('product.index', ['sort' => 'name']) }}" class="btn btn-primary">Tri par nom</a>
-                </p>
-                <p>
-                    <a href="{{ route('product.index', ['sort' => 'price']) }}" class="btn btn-dark">Tri par prix croissant</a>
-                </p>
-                <p>
-                    <a href="{{ route('product.index') }}">Ne pas trier</a>
-                </p>
-            </div>
+        <aside>
+            <p>
+                <a href="{{ route('product.create') }}" class="btn btn-dark">Ajouter un produit</a>
+            </p>
+            <p>
+                <a href="{{ route('product.index', ['sort' => 'name']) }}" class="btn btn-primary">Tri par nom</a>
+            </p>
+            <p>
+                <a href="{{ route('product.index', ['sort' => 'price']) }}" class="btn btn-primary">Tri par prix croissant</a>
+            </p>
+            <p>
+                <a href="{{ route('product.index') }}">Ne pas trier</a>
+            </p>
+        </aside>
 
+        <form action="basket.php" method="post">
             <div class="row">
 
                 @foreach ($products as $product)
@@ -47,17 +47,18 @@
                                 {{ $product->price / 100 }} €
                             </p>
                         </div>
-                        <p class="col-12 addToBasket">
-                            <label for="prod{{ $product->id }}">Ajouter au panier </label>
-                            <input type="checkbox" name="chosenProducts[]" id="prod{{ $product->id }}" value="{{ $product->id }}">
-                            <!-- $key permet d'affecter à la value de la checkbox l'index de l'article affiché.
-                            La checkbox du premier article affiché aura donc comme value 0. -->
-                        </p>
+                        {{--<p class="col-12 addToBasket">--}}
+                            {{--<label for="prod{{ $product->id }}">Ajouter au panier </label>--}}
+                            {{--<input type="checkbox" name="chosenProducts[]" id="prod{{ $product->id }}" value="{{ $product->id }}">--}}
+                            {{--<!-- $key permet d'affecter à la value de la checkbox l'index de l'article affiché.--}}
+                            {{--La checkbox du premier article affiché aura donc comme value 0. -->--}}
+                        {{--</p>--}}
                     </article>
 
                 @endforeach
 
             </div>
+            <button type="submit">Valider mon panier</button>
         </form>
     </div>
 @endsection
