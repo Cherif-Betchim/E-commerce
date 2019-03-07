@@ -108,6 +108,12 @@ class AdminProductController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $product = Product::all()->find($id);
+
+        $product->delete();
+
+        return redirect(route('productIndex'))
+            ->with('flash_message', 'Le produit (' . $product->name . ') a bien été supprimé de la base de données !')
+            ->with('flash_type', 'alert-success');
     }
 }

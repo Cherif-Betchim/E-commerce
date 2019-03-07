@@ -39,6 +39,8 @@ Route::post('/admin/products', 'AdminProductController@store')->name('productSto
 Route::get('/admin/products/edit/{id}', 'AdminProductController@edit')->name('productEdit');
 Route::patch('/admin/products', 'AdminProductController@update')->name('productUpdate');
 
+//                                  - destroy
+Route::delete('/admin/products/{id}', 'AdminProductController@destroy')->name('productDestroy');
 
 
 

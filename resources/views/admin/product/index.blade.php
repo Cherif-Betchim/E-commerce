@@ -26,7 +26,14 @@
                 <h2>
                     {{ $product->name }} :
                 </h2>
-                <strong><a href="{{ route('productEdit', ['product' => $product]) }}">éditer</a></strong>
+                <p>
+                    <a href="{{ route('productEdit', ['product' => $product]) }}" class="btn btn-warning">éditer</a>
+                </p>
+                <form action="{{ route('productDestroy', ['product' => $product]) }}" method="POST">
+                    {{ csrf_field() }}
+                    {{ method_field('DELETE') }}
+                    <button class="btn btn-danger" type="submit">supprimer</button>
+                </form>
             </div>
         @endforeach
 
