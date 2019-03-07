@@ -32,7 +32,7 @@
             </div>
         </article>
         <p>
-            <a href="{{ url('/products') }}">Retour à la liste des produits</a>
+            <a href="{{ route('frontProductIndex') }}">Retour à la liste des produits</a>
         </p>
     </div>
 @endsection

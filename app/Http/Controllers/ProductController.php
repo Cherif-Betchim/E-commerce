@@ -36,7 +36,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-        return view('product.create');
+        //
     }
 
     /**
@@ -47,20 +47,7 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        $product = new Product();
-
-        $product->name = $request->input('name');
-        $product->description = $request->input('description');
-        $product->price = $request->input('price');
-        $product->weight = $request->input('weight');
-        $product->stockQuantity = $request->input('stock');
-        $product->idCategory = $request->input('category');
-
-        $product->save();
-
-        return redirect('/products/create')
-            ->with('flash_message', 'Le produit (' . $product->name . ') a bien été ajouté à la base de données !')
-            ->with('flash_type', 'alert-success');
+        //
     }
 
     /**
@@ -71,7 +58,7 @@ class ProductController extends Controller
      */
     public function show($id)
     {
-        $product = Product::find($id);
+        $product = Product::all()->find($id);
 
         return view('product.show', ['product' => $product]);
     }

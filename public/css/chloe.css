@@ -24,8 +24,39 @@ aside {
 
 
 /*----------------------------------------------*/
-/*                  PRODUCTS                    */
+/*             (Admin) Header                   */
 /*----------------------------------------------*/
+
+header.admin {
+    margin-bottom: 2rem;
+}
+
+header.admin > div {
+    font-size: 3rem;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+header.admin nav {
+    flex-direction: row;
+    justify-content: center;
+}
+header.admin nav a {
+    margin: 0 1rem;
+}
+
+
+/*----------------------------------------------*/
+/*             (Admin) PRODUCTS                 */
+/*----------------------------------------------*/
+
+/*                Index+Create                  */
+
+aside .alert {
+    max-width: 15rem;
+}
+
 
 /*                  Create                      */
 
@@ -37,20 +68,21 @@ width: 15%;
 width: 35%;
 }
 
-aside .alert {
-    max-width: 15rem;
-}
+
+
+/*----------------------------------------------*/
+/*             (Front) PRODUCTS                 */
+/*----------------------------------------------*/
 
 /*                  Index+Show                  */
 
 article img {
-width: 100%;
+    width: 100%;
 }
 
 article {
-margin-bottom: 1rem;
+    margin-bottom: 1rem;
 }
-
 
 /*                  Index                       */
 
@@ -67,7 +99,6 @@ text-align: right;
 .productIndex button[type="submit"] {
     padding: 1rem;
     font-size: 1.5rem;
-    font-weight: 800;
 }
 
 
@@ -107,6 +138,15 @@ text-align: right;
 
 
 /*                  ELSE                  */
+
+.adminWelcome nav {
+    flex-direction: row;
+    justify-content: center;
+}
+
+.adminWelcome nav p {
+    margin: 0 1rem;
+}
 
 .cartNav h3 {
     padding: 1rem;

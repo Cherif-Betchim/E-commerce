@@ -1,6 +1,6 @@
 <header>
     <div class="container-fluid">
-        <a href="/" class="logo" title="Logo"><img src="{{asset('img/logo/logo.png')}}" alt="logo"></a>
+        <a href="/" class="logo" title="Logo"><img src="{{ asset('img/logo/logo.png') }}" alt="logo"></a>
         <h1>
             <a href="/" class="header-texte">LARAVEL E-COMMERCE</a>
         </h1>
@@ -8,7 +8,7 @@
             <ul class="menu">
                 <li class="produits">
 
-                    <a href="/products" class="header-texte">PRODUITS</a>
+                    <a href="{{ route('frontProductIndex') }}" class="header-texte">PRODUITS</a>
 
                 </li>
 
@@ -17,7 +17,10 @@
                 </li>
 
                 <li>
-                    <a href="/cart"><i class="fas fa-shopping-cart"></i></a>
+                    <a href="{{ route('cartIndex') }}"><i class="fas fa-shopping-cart"></i></a>
+                </li>
+                <li>
+                    <a href="{{ route('adminIndex') }}"><i class="fas fa-cog"></i></a>
                 </li>
             </ul>
         </nav>

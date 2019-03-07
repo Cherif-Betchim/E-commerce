@@ -1,4 +1,4 @@
-@extends('layout.layout')
+@extends('admin.layout')
 
 @section('title', 'Ajouter un produit')
 
@@ -17,7 +17,7 @@
             </aside>
         @endif
 
-        <form action="{{ route('product.index') }}" method="POST">
+        <form action="{{ route('productIndex') }}" method="POST">
             {{ csrf_field() }}
             <fieldset class="form-group">
                 <label for="name">Nom : </label>
@@ -50,7 +50,6 @@
                     <option value="5">Sweaters</option>
                     <option value="6">Joggers</option>
                     <option value="7">Socks</option>
-
                 </select>
             </fieldset>
             <button type="submit" class="btn btn-primary">Ajouter le produit</button>

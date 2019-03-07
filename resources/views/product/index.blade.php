@@ -14,20 +14,17 @@
 
         <aside>
             <p>
-                <a href="{{ route('product.create') }}" class="btn btn-dark">Ajouter un produit</a>
+                <a href="{{ route('frontProductIndex', ['sort' => 'name']) }}" class="btn btn-primary">Tri par nom</a>
             </p>
             <p>
-                <a href="{{ route('product.index', ['sort' => 'name']) }}" class="btn btn-primary">Tri par nom</a>
+                <a href="{{ route('frontProductIndex', ['sort' => 'price']) }}" class="btn btn-primary">Tri par prix croissant</a>
             </p>
             <p>
-                <a href="{{ route('product.index', ['sort' => 'price']) }}" class="btn btn-primary">Tri par prix croissant</a>
-            </p>
-            <p>
-                <a href="{{ route('product.index') }}">Ne pas trier</a>
+                <a href="{{ route('frontProductIndex') }}">Ne pas trier</a>
             </p>
         </aside>
 
-        <form action="basket.php" method="post">
+        <form action="" method="post">
             <div class="row">
 
                 @foreach ($products as $product)
@@ -38,7 +35,7 @@
                         </div>
                         <div class="col-8">
                             <h3>
-                                <a href="{{ url('/products/' . $product->id) }}">{{ $product->name }}</a>
+                                <a href="{{ route('frontProductShow', ['product' => $product]) }}">{{ $product->name }}</a>
                             </h3>
                             <p class="description">
                                 {{ $product->description }}
