@@ -15,7 +15,7 @@ class AdminProductController extends Controller
      */
     public function index()
     {
-        $products = Product::select('id', 'name')->get();
+        $products = Product::select('id', 'name', 'stock')->get();
 
         return view('admin.product.index', ['products' => $products]);
     }
@@ -36,21 +36,21 @@ class AdminProductController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store()
     {
-        $product = new Product();
+        $product = request()->validate([
+            'name' => ['required', 'min:3', 'max:40'],
+            'description' => ['required', 'min: 3'],
+            'price' => ['required', 'numeric'],
+            'weight' => ['required', 'numeric'],
+            'stock' => ['numeric'],
+            'idCategory' => ['required', 'numeric']
+        ]);
 
-        $product->name = $request->input('name');
-        $product->description = $request->input('description');
-        $product->price = $request->input('price');
-        $product->weight = $request->input('weight');
-        $product->stockQuantity = $request->input('stock');
-        $product->idCategory = $request->input('category');
-
-        $product->save();
+        Product::create($product);
 
         return redirect(route('productCreate'))
-            ->with('flash_message', 'Le produit (' . $product->name . ') a bien été ajouté à la base de données !')
+            ->with('flash_message', 'Le produit (' . $product['name'] . ') a bien été ajouté à la base de données !')
             ->with('flash_type', 'alert-success');
     }
 
@@ -87,11 +87,18 @@ class AdminProductController extends Controller
      */
     public function update(Request $request)
     {
+        request()->validate([
+            'name' => ['required', 'min:3', 'max:40'],
+            'description' => 'required',
+            'price' => ['required', 'numeric']
+        ]);
+
         $id = $request->input('id');
 
         $product = Product::all()->find($id);
 
         $product->name = $request->input('name');
+        $product->description = $request->input('description');
         $product->price = $request->input('price');
         $product->save();
 

@@ -57,6 +57,42 @@ aside .alert {
     max-width: 15rem;
 }
 
+aside ul {
+    list-style: none;
+}
+
+
+/*                  Index                       */
+
+.table th, .table td {
+    text-align: center;
+    vertical-align: middle;
+}
+
+.table th.hidden {
+    visibility: hidden;
+}
+
+.table td img {
+    width: 4rem;
+}
+
+.adminProductIndex th.productName, .adminProductIndex td.productName {
+    text-align: left;
+}
+
+.arrows {
+    text-align: center;
+    width: 15rem;
+    padding: 1.25rem;
+}
+
+.arrows a {
+    text-decoration: none;
+    display: block;
+    font-size: 2rem;
+}
+
 
 /*                  Create                      */
 
