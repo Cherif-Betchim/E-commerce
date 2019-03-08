@@ -1,6 +1,6 @@
 @extends('admin.layout')
 
-@section('title', 'Ajouter un produit')
+@section('title', 'Éditer un produit')
 
 @section('cssperso')
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
@@ -34,17 +34,16 @@
             </fieldset>
             <fieldset class="form-group">
                 <label for="stock">Quantité en stock : </label>
-                <input type="number" class="form-control" name="stock" id="stock" value="{{ $product->stockQuantity }}">
+                <input type="number" class="form-control" name="stock" id="stock" value="{{ $product->stock }}">
             </fieldset>
             <fieldset class="form-group">
-                <label for="category">Catégorie : </label>
-                <select class="form-control" name="category" id="category">
-                    <option value="1" @if($product->idCategory === 1) selected @endif>Tanks</option>
-                    <option value="2" @if($product->idCategory === 2) selected @endif>Pants</option>
-                    <option value="3" @if($product->idCategory === 3) selected @endif>Sports Bras</option>
-                    <option value="5" @if($product->idCategory === 5) selected @endif>Sweaters</option>
-                    <option value="6" @if($product->idCategory === 6) selected @endif>Joggers</option>
-                    <option value="7" @if($product->idCategory === 7) selected @endif>Socks</option>
+                <label for="category_id">Catégorie : </label>
+                <select class="form-control" name="category_id" id="category_id">
+                    @foreach ($categories as $category)
+                        <option value="{{ $category->id }}" @if($product->category_id === $category->id) selected @endif>
+                            {{ $category->name }}
+                        </option>
+                    @endforeach
                 </select>
             </fieldset>
             <button type="submit" class="btn btn-primary">Mettre à jour le produit</button>

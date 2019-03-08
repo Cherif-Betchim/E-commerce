@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Product;
+use App\Category;
 
 class AdminProductController extends Controller
 {
@@ -27,7 +28,9 @@ class AdminProductController extends Controller
      */
     public function create()
     {
-        return view('admin.product.create');
+        $categories = Category::all();
+
+        return view('admin.product.create', ['categories' => $categories]);
     }
 
     /**
@@ -44,7 +47,7 @@ class AdminProductController extends Controller
             'price' => ['required', 'numeric'],
             'weight' => ['required', 'numeric'],
             'stock' => ['numeric'],
-            'idCategory' => ['required', 'numeric']
+            'category_id' => ['required', 'numeric']
         ]);
 
         Product::create($product);
@@ -73,9 +76,10 @@ class AdminProductController extends Controller
      */
     public function edit($id)
     {
-        $product = Product::all()->find($id);
+        $product = Product::find($id);
+        $categories = Category::all();
 
-        return view('admin.product.edit', ['product' => $product]);
+        return view('admin.product.edit', ['product' => $product, 'categories' => $categories]);
     }
 
     /**
@@ -90,16 +94,23 @@ class AdminProductController extends Controller
         request()->validate([
             'name' => ['required', 'min:3', 'max:40'],
             'description' => 'required',
-            'price' => ['required', 'numeric']
+            'price' => ['required', 'numeric'],
+            'weight' => ['required', 'numeric'],
+            'stock' => ['required', 'numeric'],
+            'category_id' => ['required', 'numeric']
         ]);
 
         $id = $request->input('id');
 
-        $product = Product::all()->find($id);
+        $product = Product::find($id);
 
         $product->name = $request->input('name');
         $product->description = $request->input('description');
         $product->price = $request->input('price');
+        $product->weight = $request->input('weight');
+        $product->stock = $request->input('stock');
+        $product->category_id = $request->input('category_id');
+        
         $product->save();
 
         return redirect(route('productIndex'))
@@ -115,7 +126,7 @@ class AdminProductController extends Controller
      */
     public function destroy($id)
     {
-        $product = Product::all()->find($id);
+        $product = Product::find($id);
 
         $product->delete();
 

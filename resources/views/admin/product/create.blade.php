@@ -42,14 +42,11 @@
                 <input type="number" class="form-control @if ($errors->has('stock')) {{ 'is-invalid' }} @endif" name="stock" id="stock" value="{{ old('stock') }}" required>
             </fieldset>
             <fieldset class="form-group">
-                <label for="idCategory">Catégorie : </label>
-                <select multiple class="form-control" name="idCategory" id="idCategory" required>
-                    <option value="1">Tanks</option>
-                    <option value="2">Pants</option>
-                    <option value="3">Sports Bras</option>
-                    <option value="5">Sweaters</option>
-                    <option value="6">Joggers</option>
-                    <option value="7">Socks</option>
+                <label for="category_id">Catégorie : </label>
+                <select multiple class="form-control" name="category_id" id="category_id" required>
+                    @foreach ($categories as $category)
+                        <option value="{{ $category->id }}">{{ $category->name }}</option>
+                    @endforeach
                 </select>
             </fieldset>
             <button type="submit" class="btn btn-primary">Ajouter le produit</button>
