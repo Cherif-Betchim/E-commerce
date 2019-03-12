@@ -39,14 +39,14 @@ class AdminProductController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store()
+    public function store(Request $request)
     {
-        $product = request()->validate([
+        $product = $request->validate([
             'name' => ['required', 'min:3', 'max:40'],
             'description' => ['required', 'min: 3'],
-            'price' => ['required', 'numeric'],
-            'weight' => ['required', 'numeric'],
-            'stock' => ['numeric'],
+            'price' => ['required', 'numeric', 'min:0'],
+            'weight' => ['required', 'numeric', 'min:0'],
+            'stock' => ['numeric', 'min:0'],
             'category_id' => ['required', 'numeric']
         ]);
 
@@ -91,12 +91,12 @@ class AdminProductController extends Controller
      */
     public function update(Request $request)
     {
-        request()->validate([
+        $request->validate([
             'name' => ['required', 'min:3', 'max:40'],
             'description' => 'required',
-            'price' => ['required', 'numeric'],
-            'weight' => ['required', 'numeric'],
-            'stock' => ['required', 'numeric'],
+            'price' => ['required', 'numeric', 'min:0'],
+            'weight' => ['required', 'numeric', 'min:0'],
+            'stock' => ['required', 'numeric', 'min:0'],
             'category_id' => ['required', 'numeric']
         ]);
 
@@ -110,7 +110,7 @@ class AdminProductController extends Controller
         $product->weight = $request->input('weight');
         $product->stock = $request->input('stock');
         $product->category_id = $request->input('category_id');
-        
+
         $product->save();
 
         return redirect(route('productIndex'))

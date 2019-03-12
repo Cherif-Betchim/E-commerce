@@ -9,6 +9,15 @@
 
 @section('content')
     <div class="container productCreate">
+        <aside>
+            @if ($errors->any())
+                <ul class="alert alert-danger">
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            @endif
+        </aside>
         <form action="{{ route('productIndex') }}" method="POST">
             {{ csrf_field() }}
             {{ method_field('PATCH') }}
