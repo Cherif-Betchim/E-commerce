@@ -123,12 +123,14 @@ article {
 /*                  Index                       */
 
 .productIndex article .description {
-max-height: 100px;
-overflow: auto;
+    max-height: 100px;
+    overflow: auto;
 }
 
-p.addToBasket {
-text-align: right;
+div.addToCart {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 

@@ -10,4 +10,9 @@ class Order extends Model
     {
         return $this->hasMany('App\Product');
     }
+
+    public function address()
+    {
+        return $this->hasOne('App\Address');
+    }
 }

@@ -24,7 +24,7 @@
             </p>
         </aside>
 
-        <form action="" method="post">
+        <form action="{{ route('frontProductCart') }}" method="post">
             <div class="row">
 
                 @foreach ($products as $product)
@@ -40,9 +40,15 @@
                             <p class="description">
                                 {{ $product->description }}
                             </p>
-                            <p>
-                                {{ $product->price / 100 }} €
-                            </p>
+                            <div class="addToCart">
+                                <div>
+                                    {{ $product->price / 100 }} €
+                                </div>
+                                <div>
+                                    <label class="" for="cart">Ajouter au panier</label>
+                                    <input type="checkbox" class="" id="cart{{ $product->id }}" name="cart[]" value="{{ $product->id }}">
+                                </div>
+                            </div>
                         </div>
                         {{--<p class="col-12 addToBasket">--}}
                             {{--<label for="prod{{ $product->id }}">Ajouter au panier </label>--}}

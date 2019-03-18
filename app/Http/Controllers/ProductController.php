@@ -95,4 +95,10 @@ class ProductController extends Controller
     {
         //
     }
+
+    public function cart(Request $request)
+    {
+        $cartProducts = $_POST['cart'];
+
+    }
 }

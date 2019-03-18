@@ -23,6 +23,9 @@ Route::get('/admin', 'AdminWelcomeController@index')->name('adminIndex');
 Route::get('/products', 'ProductController@index')->name('frontProductIndex');
 Route::get('/products/{id}', 'ProductController@show')->name('frontProductShow');
 
+//                                  - other
+Route::post('/cart', 'ProductController@cart')->name('frontProductCart');
+
 
 //-------------------------------------------------------------------
 //                             (Admin) Product
