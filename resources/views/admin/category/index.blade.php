@@ -1,11 +1,11 @@
 @extends('admin.layout.layout')
 
-@section('title', 'Produits')
+@section('title', 'Catégories')
 
 @section('content')
     <div class="container">
         <h1>
-            Liste des produits
+            Liste des catégories
         </h1>
 
         <aside>
@@ -19,38 +19,30 @@
         <table class="table table-striped">
             <thead>
             <tr>
-                <th class="hidden">image</th>
                 <th>id</th>
                 <th class="productName">name</th>
-                <th>stock</th>
                 <th class="hidden">éditer</th>
                 <th class="hidden">supprimer</th>
             </tr>
             </thead>
             <tbody>
-            @foreach ($products as $product)
+            @foreach ($categories as $category)
                 <tr>
                     <td>
-                        <img src="{{ asset('/img/products/' . $product->id) }}.jpg" />
-                    </td>
-                    <td>
-                        {{ $product->id }}.
+                        {{ $category->id }}.
                     </td>
                     <td >
-                        {{ $product->name }}
+                        {{ $category->name }}
                     </td>
                     <td>
-                        {{ $product->stock }}
+                        {{--<a href="{{ route('categoryEdit', ['category' => $category]) }}" class="btn btn-warning">éditer</a>--}}
                     </td>
                     <td>
-                        <a href="{{ route('productEdit', ['product' => $product]) }}" class="btn btn-warning">éditer</a>
-                    </td>
-                    <td>
-                        <form action="{{ route('productDestroy', ['product' => $product]) }}" method="POST">
-                            @csrf
-                            @method('DELETE')
-                            <button class="btn btn-danger" type="submit">supprimer</button>
-                        </form>
+                        {{--<form action="{{ route('categoryDestroy', ['category' => $category]) }}" method="POST">--}}
+                            {{--@csrf--}}
+                            {{--@method('DELETE')--}}
+                            {{--<button class="btn btn-danger" type="submit">supprimer</button>--}}
+                        {{--</form>--}}
                     </td>
                 </tr>
             @endforeach
