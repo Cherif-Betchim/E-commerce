@@ -1,11 +1,6 @@
-@extends('admin.layout')
+@extends('admin.layout.layout')
 
 @section('title', 'Éditer un produit')
-
-@section('cssperso')
-    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/chloe.css') }}">
-@endsection
 
 @section('content')
     <div class="container productCreate">

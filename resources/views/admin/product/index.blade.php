@@ -1,11 +1,6 @@
-@extends('admin.layout')
+@extends('admin.layout.layout')
 
 @section('title', 'Produits')
-
-@section('cssperso')
-    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/chloe.css') }}">
-@endsection
 
 @section('content')
     <div class="container adminProductIndex">

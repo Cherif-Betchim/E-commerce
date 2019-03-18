@@ -2,10 +2,6 @@
 
 @section('title', 'Panier')
 
-@section('cssperso')
-    <link rel="stylesheet" href="{{asset('css/chloe.css')}}">
-@endsection
-
 @section('content')
     <h1>Votre panier</h1>
 

@@ -2,10 +2,6 @@
 
 @section('title','Accueil')
 
-@section('cssperso')
-    <link rel="stylesheet" href="{{ asset('css/jerome.css') }}">
-@endsection
-
 @section('content')
     <div class="welcome">
     <h1>Resultat du formulaire</h1>

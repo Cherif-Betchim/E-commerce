@@ -2,10 +2,6 @@
 
 @section('title','CGV')
 
-@section('cssperso')
-    <link rel="stylesheet" href="{{ asset('css/jerome.css') }}">
-@endsection
-
 @section('content')
     <div class="cgv">
     <h4>COORDONNÉES DE LA SOCIÉTÉ</h4>

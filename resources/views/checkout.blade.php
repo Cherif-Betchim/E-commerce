@@ -2,10 +2,6 @@
 
 @section('title','Accueil')
 
-@section('cssperso')
-    <link rel="stylesheet" href="{{ asset('css/checkout.css') }}">
-@endsection
-
 @section('content')
 
 
@@ -25,33 +21,33 @@
             <div class="picto-cb">
 
                 <input type="radio" name="type" value="master">
-                <img src="{{asset('img/master.jfif')}}" class="img-cb"> MasterCard
+                <img src="{{asset('img/checkout/master.jfif')}}" class="img-cb"> MasterCard
             </div>
             <div class="picto-cb">
 
                 <input type="radio" name="type" value="CA" >
-                <img src="{{asset('img/aurore.png')}}" class="img-cb"> Carte Aurore
+                <img src="{{asset('img/checkout/aurore.png')}}" class="img-cb"> Carte Aurore
             </div>
             <div class="picto-cb">
 
                 <input type="radio" name="type" value="Cifinoga">
-                <img src="{{asset('img/cofinoga.png')}}" class="img-cb"> Cofinoga
+                <img src="{{asset('img/checkout/cofinoga.png')}}" class="img-cb"> Cofinoga
             </div>
             <div class="picto-cb">
 
                 <input type="radio" name="type" value="4etoiles">
-                <img src="{{asset('img/4.jfif')}}" class="img-cb"> 4 étoiles
+                <img src="{{asset('img/checkout/4.jfif')}}" class="img-cb"> 4 étoiles
             </div>
             <div class="picto-cb">
 
                 <input type="radio" name="type" value="Visa">
-                <img src="{{asset('img/visa.jfif')}}" class="img-cb"> Visa
+                <img src="{{asset('img/checkout/visa.jfif')}}" class="img-cb"> Visa
             </div>
 
 
             <div class="picto-cb">
                 <input type="radio" name="type" value="CB" >
-                <img src="{{asset('img/cb.jfif')}}" class="img-cb">
+                <img src="{{asset('img/checkout/cb.jfif')}}" class="img-cb">
 
             </div>
         </div>

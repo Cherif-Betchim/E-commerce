@@ -2,10 +2,6 @@
 
 @section('title','Accueil')
 
-@section('cssperso')
-    <link rel="stylesheet" href="{{ asset('css/tommy.css') }}">
-@endsection
-
 @section('content')
     <div class="title m-b-md">
         <h1>Mon compte</h1>
@@ -68,7 +64,7 @@
             </div>
             <div class="add-payment">
                 <h3>Ajouter une carte :</h3>
-                <form action="my-account.blade.php" method="">
+                <form action="account.blade.php" method="">
                     <div class="num-and-owner">
                         <div class="num-cart">
                             <label for="">Numéro de carte :</label>

@@ -2,11 +2,6 @@
 
 @section('title','Nos produits')
 
-@section('cssperso')
-    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/chloe.css') }}">
-@endsection
-
 @section('content')
 
     <div class="container productIndex">

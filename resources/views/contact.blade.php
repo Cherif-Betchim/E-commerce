@@ -2,15 +2,11 @@
 
 @section('title','Accueil')
 
-@section('cssperso')
-    <link rel="stylesheet" href="{{ asset('css/jerome.css') }}">
-@endsection
-
 @section('content')
 
     <h1>SERVICE CLIENT - CONTACTEZ-NOUS</h1>
     <div class="contact">
-        <form class="formulaire" method="post" action="/results">
+        <form class="formulaire" method="post" action="/contact/results">
         <div class="coordonnees">
             {{ csrf_field() }}
             <h2>  Vos coordonnées </h2>
