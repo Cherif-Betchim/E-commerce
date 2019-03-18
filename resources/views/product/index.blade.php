@@ -5,8 +5,6 @@
 @section('content')
 
     <div class="container productIndex">
-        <h1>Breath Yoga (or don't breath at all)</h1>
-
         <aside>
             <p>
                 <a href="{{ route('frontProductIndex', ['sort' => 'name']) }}" class="btn btn-primary">Tri par nom</a>
