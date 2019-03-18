@@ -57,3 +57,8 @@ Route::get('/cart', 'CartController@index')->name('cartIndex');
 Route::get('/cgv', 'CgvController@show');
 Route::get('/contact', 'ContactController@show');
 Route::post('/contact/results', 'ContactController@store');
+
+Route::get('/add-to-cart/{id}', [
+    'uses' => 'ProductController',
+    'as' => 'product.addToCart'
+]);
