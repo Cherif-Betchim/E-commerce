@@ -9,18 +9,22 @@
       <div class="row">
           <div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
               <ul class="list-group">
+
                   @foreach($products as $product)
+
                       <li class="list-group-item">
                           <span class="badge">{{ $product['qty'] }}</span>
-                          <strong>{{ $product['item']['title'] }}</strong>
+                          <strong>{{ $product['item']['name'] }}</strong>
                           <span class="label label-succes">{{ $product['price'] }}</span>
-                          <div class="btn-group">
-                              <button type="button" class="btn btn-primary btn-xs dropdown-toggle" data-toggle="dropdown"> Action <span class="caret"> </span> </button>
-                              <ul class="dropdown-menu">
-                                  <li><a href="#"> Reduire de 1</a> </li>
-                                  <li><a href="#"> Tout supprimer</a> </li>
-                              </ul>
-
+                          <div class="dropdown">
+                              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                  Dropdown button
+                              </button>
+                              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                  <a class="dropdown-item" href="#">Action</a>
+                                  <a class="dropdown-item" href="#">Another action</a>
+                                  <a class="dropdown-item" href="#">Something else here</a>
+                              </div>
                           </div>
                       </li>
                       @endforeach
@@ -30,30 +34,7 @@
           </div>
 
       </div>
-      <div class="row">
-          <div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
-              <ul class="list-group">
-                  @foreach($products as $product)
-                      <li class="list-group-item">
-                          <span class="badge">{{ $product['qty'] }}</span>
-                          <strong>{{ $product['item']['title'] }}</strong>
-                          <span class="label label-succes">{{ $product['price'] }}</span>
-                          <div class="btn-group">
-                              <button type="button" class="btn btn-primary btn-xs dropdown-toggle" data-toggle="dropdown"> Action <span class="caret"> </span> </button>
-                              <ul class="dropdown-menu">
-                                  <li><a href="#"> Reduire de 1</a> </li>
-                                  <li><a href="#"> Tout supprimer</a> </li>
-                              </ul>
 
-                          </div>
-                      </li>
-                  @endforeach
-
-              </ul>
-
-          </div>
-
-      </div>
       <div class="row">
           <div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
               <strong>Total :{{ $totalPrice }}</strong>

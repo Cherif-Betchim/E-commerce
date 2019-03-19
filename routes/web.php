@@ -63,12 +63,11 @@ Route::post('/admin/categories', 'AdminCategoryController@store')->name('categor
 
 Route::get('/checkout','CheckoutController@show');
 Route::get('/my-account', 'AccountController@index');
-Route::get('/cart', 'CartController@index')->name('cartIndex');
 Route::get('/cgv', 'CgvController@show');
 Route::get('/contact', 'ContactController@show');
 Route::post('/contact/results', 'ContactController@store');
 
 
 
-Route::get('/add-to-cart/{id}', 'ProductController@getAddToCart')->name('productAddToCart');
-Route::get('/cart', 'CartController@index')->name('cartIndex');
+Route::get('/add-to-cart/{id}', 'CartController@getAddToCart')->name('productAddToCart');
+Route::get('/cart', 'CartController@getCart')->name('cartIndex');
