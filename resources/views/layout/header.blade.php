@@ -17,7 +17,10 @@
                 </li>
 
                 <li>
-                    <a href="{{ route('cartIndex') }}"><i class="fas fa-shopping-cart"></i></a>
+                    <a href="{{ route('cartIndex') }}"><i class="fas fa-shopping-cart"></i>
+                    <span class="badge" >{{Session::has ('cart') ? Session::get('cart')->totalQty : ''}}</span>
+                    </a>
+
                 </li>
                 <li>
                     <a href="{{ route('adminIndex') }}"><i class="fas fa-cog"></i></a>

@@ -18,6 +18,8 @@
             <p>
                 {{ $product->price / 100 }} €
             </p>
+            <a href="#" class="btn" role="button">Ajouter au panier</a>
+
         </article>
         <p>
             <a href="{{ route('frontProductIndex') }}">Retour à la liste des produits</a>
