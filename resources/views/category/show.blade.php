@@ -1,4 +1,9 @@
-<h1>{{ $category->name }}</h1>
-@foreach($products as $product)
-    {{ $product->name }}<br>
-@endforeach
+@extends('layout.layout')
+
+@section('title', $category->name)
+
+@section('content')
+    @include('productsFilters')
+        <h2>{{ $category->name }}</h2>
+    @include('productsListing')
+@endsection

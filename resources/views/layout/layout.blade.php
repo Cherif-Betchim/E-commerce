@@ -12,9 +12,7 @@
 <body>
     @include('layout.header')
 
-    <div class="content">
-        @yield('content')
-    </div>
+    @yield('content')
 
     @include('layout.footer')
 </body>
