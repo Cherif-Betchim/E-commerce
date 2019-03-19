@@ -1,0 +1,96 @@
+*{
+    box-sizing: border-box;
+}
+
+body, html{
+    height: 100%;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    color: #000;
+    background: #fff;
+    margin: 0 auto;
+}
+
+/****************************************************
+
+                    HEADER
+
+*****************************************************/
+
+.header{
+    background: linear-gradient(to right,#360033,#0b8793);
+    padding: 25px 0;
+    height: auto;
+    border-bottom: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    color: #fff;
+}
+
+.header .header-group{
+    margin:auto;
+}
+
+.header .nav-left{
+    text-align: left;
+    color:#fff;
+}
+
+.header .logo{
+    text-align: center;
+}
+
+.header .logo img{
+    width: 100px;
+}
+
+.header .nav-right{
+    text-align: right;
+}
+
+.header nav ul li{
+    list-style: none;
+    display: inline-block;
+    margin-right: 50px;
+}
+
+.header .header-link{
+    color:#fff;
+    font-size: 20px;
+    font-weight: 600;
+    padding-bottom: 5px;
+}
+
+.header .header-link:hover{
+    text-decoration: none;
+    border-bottom: 3px solid #fff;
+    transition:all 100ms ease-in-out;
+}
+
+/****************************************************
+
+                    WELCOME
+
+*****************************************************/
+
+.welcome{
+    background: url(../img/home/background.jpg);
+    background-size: cover;
+    height: 100vh;
+}
+
+.welcome .row{
+    padding-top: 160px;
+}
+
+.welcome .login{
+    margin: auto;
+    text-align: center;
+    color:#fff;
+}
