@@ -35,14 +35,14 @@
                         {{ $category->name }}
                     </td>
                     <td>
-                        {{--<a href="{{ route('categoryEdit', ['category' => $category]) }}" class="btn btn-warning">éditer</a>--}}
+                        <a href="{{ route('categoryEdit', ['category' => $category]) }}" class="btn btn-warning">éditer</a>
                     </td>
                     <td>
-                        {{--<form action="{{ route('categoryDestroy', ['category' => $category]) }}" method="POST">--}}
-                            {{--@csrf--}}
-                            {{--@method('DELETE')--}}
-                            {{--<button class="btn btn-danger" type="submit">supprimer</button>--}}
-                        {{--</form>--}}
+                        <form action="{{ route('categoryDestroy', ['category' => $category ->id]) }}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <button class="btn btn-danger" type="submit">supprimer</button>
+                        </form>
                     </td>
                 </tr>
             @endforeach

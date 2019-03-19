@@ -67,7 +67,10 @@ class AdminCategoryController extends Controller
      */
     public function edit($id)
     {
-        //
+        $category = category::find($id);
+
+
+        return view('admin.category.edit', ['category' => $category]);
     }
 
     /**
@@ -77,9 +80,25 @@ class AdminCategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+        $request->validate([
+            'name' => ['required', 'min:3', 'max:40'],
+        ]);
+
+        $id = $request->input('id');
+
+        $category = category::find($id);
+
+        $category->name = $request->input('name');
+
+
+
+        $category->save();
+
+        return redirect(route('categoryIndex'))
+            ->with('flash_message', 'La  Catégorie (' . $category->name . ') a bien été modifié dans la base de données !')
+            ->with('flash_type', 'alert-success');
     }
 
     /**
@@ -90,6 +109,12 @@ class AdminCategoryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $categories = category::find($id);
+
+        $categories->delete();
+
+        return redirect(route('categoryIndex'))
+            ->with('flash_message', 'La catégorie ' . $categories['name'] . ' a bien été ajoutée à la base de données !')
+            ->with('flash_type', 'alert-success');
     }
 }
