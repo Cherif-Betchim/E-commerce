@@ -18,7 +18,7 @@
             <p>
                 {{ $product->price / 100 }} €
             </p>
-            <a href="#" class="btn" role="button">Ajouter au panier</a>
+            <a href="{{ route('productAddToCart', ['id' => $product->id]) }}" class="btn" role="button">Ajouter au panier</a>
 
         </article>
         <p>

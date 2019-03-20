@@ -18,7 +18,7 @@
                                 <span class="label label-succes">{{ $product['price'] }}</span>
                                 <div class="dropdown">
                                     <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        Supprimer
+                                        Quantité
                                     </button>
                                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                         <a class="dropdown-item" href="{{route('cartAddByOne', ['id'=> $product['item']['id'] ] ) }}">Ajouter 1 article</a>
