@@ -79,6 +79,7 @@ Route::post('/contact/results', 'ContactController@store');
 
 Route::get('/add-to-cart/{id}', 'CartController@getAddToCart')->name('productAddToCart');
 Route::get('/cart', 'CartController@getCart')->name('cartIndex');
+Route::get('/reduce/{id}', 'CartController@getReduceByOne')->name('cartReduceByOne');
 
 Route::get('/checkout', 'CheckoutController@getCheckout')->name('checkoutIndex');
 Route::post('/checkout', 'CheckoutController@getCheckout')->name('checkoutPay');
