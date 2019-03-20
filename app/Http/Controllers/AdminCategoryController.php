@@ -13,7 +13,7 @@ class AdminCategoryController extends Controller
      */
     public function index()
     {
-        $categories = Category::select('id', 'name')->get();
+        $categories = Category::all();
 
         return view('admin.category.index', ['categories' => $categories]);
     }
@@ -64,12 +64,9 @@ class AdminCategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Category $category)
     {
-        $categories = category::find($id);
-
-
-        return view('admin.category.edit', ['categories' => $categories]);
+        return view('admin.category.edit', ['category' => $category]);
     }
 
     /**

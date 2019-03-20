@@ -64,7 +64,7 @@ Route::get('/admin/categories/create', 'AdminCategoryController@create')->name('
 Route::post('/admin/categories', 'AdminCategoryController@store')->name('categoryStore');
 
 //                                  - update
-Route::get('/admin/categories/edit/{id}', 'AdminCategoryController@edit')->name('categoryEdit');
+Route::get('/admin/categories/edit/{category}', 'AdminCategoryController@edit')->name('categoryEdit');
 Route::put('/admin/categories', 'AdminCategoryController@update')->name('categoryUpdate');
 //                                  - destroy
 Route::delete('/admin/categories/{id}', 'AdminCategoryController@destroy')->name('categoryDestroy');

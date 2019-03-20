@@ -13,17 +13,17 @@
                 </ul>
             @endif
         </aside>
-        <form action="{{ route('categoryIndex') }}" method="POST">
+        <form action="{{ route('categoryUpdate') }}" method="POST">
             @csrf
             @method('put')
 
-            <input type="hidden" name="id" value="{{ $categories->id }}">
+            <input type="hidden" name="id" value="{{ $category->id }}">
 
             <fieldset class="form-group">
                 <label for="name">Nom : </label>
-                <input type="text" class="form-control" name="name" id="name" value="{{ $categories->name }}">
+                <input type="text" class="form-control" name="name" id="name" value="{{ $category->name }}">
             </fieldset>
-            <button type="submit" class="btn btn-primary">Mettre à jour la Categore</button>
+            <button type="submit" class="btn btn-primary">Mettre à jour la catégorie</button>
         </form>
     </div>
 @endsection
