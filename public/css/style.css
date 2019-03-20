@@ -1,0 +1,367 @@
+*{
+    box-sizing: border-box;
+}
+
+body, html{
+    height: 100%;
+}
+
+body {
+    font-family: 'Raleway', sans-serif !important;
+    font-weight: 500;
+    font-size: 20px;
+    color: #000;
+    background: #fff;
+    margin: 0 auto;
+}
+
+.title-2{
+    font-family: 'Playfair Display', sans-serif;
+    font-size: 50px;
+}
+
+.title-3{
+    font-family: 'Playfair Display', sans-serif;
+    font-size: 25px;
+}
+
+.italic{
+    font-style: italic;
+}
+
+.bold{
+    font-weight:700;
+}
+
+.color{
+    color:#0b8793;
+}
+
+.home-btn{
+    color:#fff;
+    background: #0b8793;
+    text-transform: uppercase;
+    border-radius: 0;
+    padding: 15px 30px;
+    margin-right: 20px;
+    border: 0;
+    font-weight: 500;
+    font-size: 16px;
+    text-decoration: none;
+    transition: color .15s ease-in-out,     background-color .15s ease-in-out;
+
+}
+
+.home-btn:hover{
+    background: #fff;
+    color:#0b8793;
+    text-decoration: none;
+}
+
+.cart-btn{
+    color:#0b8793;
+    text-transform: uppercase;
+    font-weight: 500;
+    transition: border-bottom .15s ease-in-out;
+
+}
+
+.cart-btn:hover{
+    color:#0b8793;
+    border-bottom:3px solid #0b8793;
+    text-decoration: none;
+}
+
+
+/****************************************************
+
+            HEADER
+
+*****************************************************/
+
+.header{
+    background: linear-gradient(to right,#360033,#0b8793);
+    padding: 25px 0;
+    height: auto;
+    border-bottom: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    color: #fff;
+    z-index: 10000;
+}
+
+.header .header-group{
+    margin:auto;
+}
+
+.header .nav-left{
+    text-align: right;
+    color:#fff;
+}
+
+.header .logo{
+    text-align: center;
+}
+
+.header .logo img{
+    width: 100px;
+}
+
+.header .nav-right{
+    text-align: left;
+}
+
+.header nav ul li{
+    list-style: none;
+    display: inline-block;
+    margin-right: 50px;
+}
+
+.header .header-link{
+    color:#fff;
+    font-size: 20px;
+    font-weight: 600;
+    padding-bottom: 5px;
+}
+
+.header .header-link:hover{
+    text-decoration: none;
+    border-bottom: 3px solid #fff;
+    transition:all 100ms ease-in-out;
+}
+
+/****************************************************
+
+            HOME/ WELCOME
+
+*****************************************************/
+
+.welcome{
+    background-color: #000;
+    background: url(../img/home/background.jpg);
+    background-size: cover;
+    height: 100vh;
+    margin-bottom: 100px;
+}
+
+.welcome .overlay{
+    background:rgba(0,0,0,0.5);
+    height: 100vh;
+    width: 100%;
+}
+
+.welcome .row{
+    padding-top: 160px;
+}
+
+.welcome .login{
+    margin: auto;
+    text-align: center;
+    color:#fff;
+    margin-top:25vh;
+    font-size: 20px;
+}
+
+.welcome .login p{
+    margin-bottom: 50px;
+}
+
+.welcome .login .title-2{
+    margin-bottom: 50px !important;
+}
+
+/****************************************************
+
+            HOME/ LATEST PRODUCT
+
+*****************************************************/
+
+.latest-product{
+    margin-bottom: 100px;
+}
+
+.latest-product .title-2{
+    margin:auto;
+    text-align: center;
+    margin-bottom: 100px;
+    color:#fff;
+    position: relative;
+    background: #0b8793;
+    padding: 30px 10px;
+    width: 50%;
+}
+
+.latest-product .title-2::after{
+    content:"";
+    height: 5px;
+    width: 70px;
+    background: #0b8793;
+    position: absolute;
+    bottom: -10%;
+    left: 45%;
+    transform:rotate(90deg);
+}
+
+.latest-product .product{
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.latest-product .product .title-3{
+    font-family:'Raleway', sans-serif;
+}
+
+.latest-product .product img{
+    margin-bottom: 15px;
+    border: 3px solid #0b8793;
+}
+
+.latest-product .btn-container{
+    text-align: center;
+}
+
+.latest-product .btn-container .home-btn{
+    background:#0b8793;
+    color:#fff;
+    border:3px solid #0b8793;
+    transition: color .15s ease-in-out,     background-color .15s ease-in-out;
+}
+
+.latest-product .btn-container .home-btn:hover{
+    border:3px solid #0b8793;
+    color: #0b8793;
+    background: none;
+}
+
+/****************************************************
+
+            HOME/ BACKGROUND FIXED
+
+*****************************************************/
+.background-fixed{
+    background: url(../img/home/background-fixed.jpg);
+    background-size:cover;
+    background-attachment: fixed;
+    height: 700px;
+}
+
+/****************************************************
+
+            HOME/ SHOP BY CATEGORIES
+
+*****************************************************/
+
+.product-categories{
+    background: #0b8793;
+    padding: 100px 0;
+}
+
+.product-categories .title-2{
+    margin:auto;
+    text-align: center;
+    margin-bottom: 100px;
+    color:#0b8793;
+    position: relative;
+    background: #fff;
+    padding: 30px 10px;
+    width: 35%;
+}
+
+.product-categories .title-2::after{
+    content:"";
+    height: 5px;
+    width: 70px;
+    background: #fff;
+    position: absolute;
+    bottom: -10%;
+    left: 45%;
+    transform:rotate(90deg);
+}
+
+.product-categories .category li{
+    display: inline-block;
+    list-style: none;
+    text-align: center;
+
+
+}
+
+.product-categories .category li a{
+    text-decoration: none;
+}
+
+.product-categories .category .img-category{
+    margin-bottom: 10px;
+}
+
+.product-categories .category .img-category img{
+    border:3px solid #fff;
+}
+
+.product-categories .category .label-category{
+    color:#fff;
+}
+
+
+/****************************************************
+
+            FOOTER
+
+*****************************************************/
+.footer{
+    background: linear-gradient(to right,#360033,#0b8793);
+    padding: 25px 0;
+    border-bottom: none;
+    width: 100%;
+    color: #fff;
+}
+
+.footer .logo{
+    text-align: center;
+}
+
+.footer .logo img{
+    width: 100px;
+}
+
+.footer .infos ul{
+    padding-left:0;
+    margin-bottom: 0;
+}
+
+.footer .infos li {
+    list-style: none;
+}
+
+.footer .infos li a{
+    color:#fff;
+}
+
+.footer .title-3{
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.footer .title-3::after{
+    position: absolute;
+    content:"";
+    bottom: -30%;
+    left: 0;
+    height: 5px;
+    width: 5rem;
+    background: #fff;
+}
+
+.footer .social-network a{
+    font-size: 30px;
+    text-decoration: none;
+    color:#fff;
+    margin-right: 10%;
+    transition: color .15s ease-in-out;
+}
+
+.footer .social-network a:hover{
+    color:#0b8793;
+}

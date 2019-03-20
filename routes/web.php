@@ -73,7 +73,7 @@ Route::get('/checkout','CheckoutController@show');
 Route::get('/my-account', 'AccountController@index');
 Route::get('/cart', 'CartController@index')->name('cartIndex');
 Route::get('/cgv', 'CgvController@show');
-Route::get('/contact', 'ContactController@show');
+Route::get('/contact', 'ContactController@show')->name('contactIndex');
 Route::post('/contact/results', 'ContactController@store');
 
 
