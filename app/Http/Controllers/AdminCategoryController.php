@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 use App\Category;
 
 class AdminCategoryController extends Controller
@@ -36,11 +37,16 @@ class AdminCategoryController extends Controller
      */
     public function store(Request $request)
     {
-        $category = $request->validate([
+        $category = new Category;
+
+        $request->validate([
             'name' => ['required', 'min:3', 'max:40']
         ]);
 
-        Category::create($category);
+        $category->name = $request->input('name');
+        $category->slug = Str::slug($category->name, '-');
+
+        $category->save();
 
         return redirect(route('categoryCreate'))
             ->with('flash_message', 'La catégorie ' . $category['name'] . ' a bien été ajoutée à la base de données !')
@@ -84,9 +90,12 @@ class AdminCategoryController extends Controller
 
         $id = $request->input('id');
         $category = Category::find($id);
+
         $category->name = $request->input('name');
+        $category->slug = Str::slug($category->name, '-');
 
         $category->save();
+
         return redirect(route('categoryIndex'))
             ->with('flash_message', 'La  Catégorie (' . $category->name . ') a bien été modifié dans la base de données !')
             ->with('flash_type', 'alert-success');
