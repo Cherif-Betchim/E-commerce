@@ -87,11 +87,9 @@ class AdminCategoryController extends Controller
 
         $id = $request->input('id');
         $category = Category::find($id);
-
         $category->name = $request->input('name');
 
         $category->save();
-        dd($category);
         return redirect(route('categoryIndex'))
             ->with('flash_message', 'La  Catégorie (' . $category->name . ') a bien été modifié dans la base de données !')
             ->with('flash_type', 'alert-success');
