@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Product;
+use App\Category;
 
 
 class ProductController extends Controller
@@ -13,8 +14,10 @@ class ProductController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
+        $url = '/products';
+
         $products = Product::all();
 
         if (isset($_GET['sort'])) {
@@ -26,7 +29,10 @@ class ProductController extends Controller
             }
         }
 
-        return view('product.index', ['products' => $products]);
+        return view('product.index', [
+            'products' => $products,
+            'url' => $url
+        ]);
     }
 
     /**

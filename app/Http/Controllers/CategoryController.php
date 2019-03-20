@@ -45,13 +45,25 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Category $category)
+    public function show(Category $category, Request $request)
     {
+        $url = '/category/' . $category->slug;
+
         $products = $category->products;
+
+        if (isset($_GET['sort'])) {
+            if ($_GET['sort'] == 'name')
+            {
+                $products = $category->products->sortBy('name');
+            } elseif ($_GET['sort'] == 'price') {
+                $products = $category->products->sortBy('price');
+            }
+        }
 
         return view('category.show', [
             'products' => $products,
-            'category' => $category
+            'category' => $category,
+            'url' => $url
         ]);
     }
 
