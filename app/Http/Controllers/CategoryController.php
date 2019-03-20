@@ -4,9 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Product;
+use App\Category;
 
-
-class ProductController extends Controller
+class CategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,18 +15,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $products = Product::all();
-
-        if (isset($_GET['sort'])) {
-            if ($_GET['sort'] == 'name')
-            {
-                $products = Product::all()->sortBy('name');
-            } elseif ($_GET['sort'] == 'price') {
-                $products = Product::all()->sortBy('price');
-            }
-        }
-
-        return view('product.index', ['products' => $products]);
+        //
     }
 
     /**
@@ -58,9 +47,13 @@ class ProductController extends Controller
      */
     public function show($id)
     {
-        $product = Product::all()->find($id);
+        $category = Category::find($id);
+        $products = $category->products;
 
-        return view('product.show', ['product' => $product]);
+        return view('category.show', [
+            'products' => $products,
+            'category' => $category
+        ]);
     }
 
     /**
@@ -96,12 +89,4 @@ class ProductController extends Controller
     {
         //
     }
-
-    public function cart(Request $request)
-    {
-    //
-    }
-
-
-
 }
