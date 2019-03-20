@@ -3,8 +3,8 @@
 @section('title', 'Panier')
 
 @section('content')
-
-    @if(Session::has('cart'))
+    <div class="container">
+        @if(Session::has('cart'))
 
       <div class="row">
           <div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
@@ -51,15 +51,15 @@
 
     @else
 
-    </div>
-      <div class="row">
-          <div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
-              <h2> Aucun article dans le panier</h2>
+            <div class="row">
+                <div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
+                    <h2> Aucun article dans le panier</h2>
 
           </div>
       </div>
 
-    @endif
+        @endif
+    </div>
 
 
 @endsection
