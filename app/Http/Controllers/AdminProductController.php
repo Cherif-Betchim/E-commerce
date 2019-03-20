@@ -53,7 +53,7 @@ class AdminProductController extends Controller
         Product::create($product);
 
         return redirect(route('productCreate'))
-            ->with('flash_message', 'Le produit (' . $product['name'] . ') a bien été ajouté à la base de données !')
+            ->with('flash_message', 'Le produit ' . $product['name'] . ' a bien été ajouté à la base de données !')
             ->with('flash_type', 'alert-success');
     }
 

@@ -14,8 +14,8 @@
             @endif
         </aside>
         <form action="{{ route('productIndex') }}" method="POST">
-            {{ csrf_field() }}
-            {{ method_field('PATCH') }}
+            @csrf
+            @method('put')
 
             <input type="hidden" name="id" value="{{ $product->id }}">
             <fieldset class="form-group">

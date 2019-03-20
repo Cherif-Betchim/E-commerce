@@ -37,9 +37,9 @@
                         <li>
                             <a href="/my-account" class="header-link"><i class="fas fa-user"></i></a>
                         </li>
-
                         <li>
                             <a href="{{ route('cartIndex') }}" class="header-link"><i class="fas fa-shopping-cart"></i></a>
+                            <span class="badge" >{{Session::has ('cart') ? Session::get('cart')->totalQty : ''}}</span>
                         </li>
                         <li>
                             <a href="{{ route('adminIndex') }}" class="header-link"><i class="fas fa-cog"></i></a>

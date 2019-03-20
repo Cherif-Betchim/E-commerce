@@ -3,78 +3,63 @@
 @section('title', 'Panier')
 
 @section('content')
-    <h1>Votre panier</h1>
+    <div class="container">
+        @if(Session::has('cart'))
 
-    <h2>Récapitualif de la commande</h2>
+            <div class="row">
+                <div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
+                    <ul class="list-group">
 
-    <div class="cartNav">
-        <h3 class="selected">Récapitulatif</h3>
-        <h3>Adresse</h3>
-        <h3>Livraison</h3>
-        <h3>Connexion</h3>
-        <h3>
-            <a href="/checkout">Paiement</a>
-        </h3>
-    </div>
+                        @foreach($products as $product)
 
-    <div class="cartBody">
-        <div class="cartNav">
-            <div class="cartProduct">Produit</div>
-            <div class="cartDesc">Description</div>
-            <div class="cartAvail">Disponibilité</div>
-            <div class="cartPrice">Prix unitaire</div>
-            <div class="cartQty">Quantité</div>
-            <div class="cartDelete"></div>
-            <div class="cartTotal">Total</div>
-        </div>
-        @foreach($chosenArticles as $article)
-            <div class="cartProductList">
-                <div class="cartProduct">
-                    <img src="{{asset($article['img'])}}">
+                            <li class="list-group-item">
+                                <span class="badge">{{ $product['qty'] }}</span>
+                                <strong>{{ $product['item']['name'] }}</strong>
+                                <span class="label label-succes">{{ $product['price'] }}</span>
+                                <div class="dropdown">
+                                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        Dropdown button
+                                    </button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item" href="#">Action</a>
+                                        <a class="dropdown-item" href="#">Another action</a>
+                                        <a class="dropdown-item" href="#">Something else here</a>
+                                    </div>
+                                </div>
+                            </li>
+                        @endforeach
+
+                    </ul>
+
                 </div>
-                <div class="cartDesc">
-                    <h4>
-                        <a href="/products/{{$article['id']}}">{{$article['name']}}</a>
-                    </h4>
-                    <p>{{$article['description']}}</p>
-                </div>
-                <div class="cartAvail {{$article['availability']}}">
-                    <i class="far fa-check-circle available"></i>
-                    <i class="far fa-times-circle notavailable"></i>
-                </div>
-                <div class="cartPrice">{{$article['price']}}€</div>
-                <div class="cartQty">
-                    <input type="number" value="{{$article['quantity']}}">
-                </div>
-                <div class="cartDelete">
-                    <i class="far fa-trash-alt"></i>
-                </div>
-                <div class="cartTotal">
-                    <strong>{{$article['price']*$article['quantity']}}€</strong>
+
+            </div>
+
+            <div class="row">
+                <div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
+                    <strong>Total :{{ $totalPrice }}</strong>
+
                 </div>
             </div>
-        @endforeach
+            <hr>
+            <div class="row">
+                <div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
+                    <button type="button" class="btn btn-success"> Checkout</button>
+
+                </div>
+            </div>
+
+        @else
+
+            <div class="row">
+                <div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
+                    <h2> Aucun article dans le panier</h2>
+
+                </div>
+            </div>
+
+        @endif
     </div>
 
-    <div class="cartValidation">
-        <div>
-            <label for="promo">Code promo : </label><input type="text" id="promo">
-        </div>
-        <div>
-            <strong>Total de la commande : {{$totalPrice}}€</strong>
-        </div>
-        <div>
-            <button type="submit">Valider le panier</button>
-        </div>
-    </div>
-
-    <div class="cartFooter">
-        <div>
-            <a href="/products">Continuer mes achats</a>
-        </div>
-        <div>
-            <a href="">Sauvegarder mon panier</a>
-        </div>
-    </div>
 
 @endsection

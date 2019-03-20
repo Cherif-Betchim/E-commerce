@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Category;
 use Illuminate\Http\Request;
-use App\Product;
 
-
-class ProductController extends Controller
+class AdminCategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,18 +14,9 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $products = Product::all();
+        $categories = Category::select('id', 'name')->get();
 
-        if (isset($_GET['sort'])) {
-            if ($_GET['sort'] == 'name')
-            {
-                $products = Product::all()->sortBy('name');
-            } elseif ($_GET['sort'] == 'price') {
-                $products = Product::all()->sortBy('price');
-            }
-        }
-
-        return view('product.index', ['products' => $products]);
+        return view('admin.category.index', ['categories' => $categories]);
     }
 
     /**
@@ -36,7 +26,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.category.create');
     }
 
     /**
@@ -47,7 +37,15 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $category = $request->validate([
+            'name' => ['required', 'min:3', 'max:40']
+        ]);
+
+        Category::create($category);
+
+        return redirect(route('categoryCreate'))
+            ->with('flash_message', 'La catégorie ' . $category['name'] . ' a bien été ajoutée à la base de données !')
+            ->with('flash_type', 'alert-success');
     }
 
     /**
@@ -58,9 +56,7 @@ class ProductController extends Controller
      */
     public function show($id)
     {
-        $product = Product::all()->find($id);
-
-        return view('product.show', ['product' => $product]);
+        //
     }
 
     /**
@@ -96,12 +92,4 @@ class ProductController extends Controller
     {
         //
     }
-
-    public function cart(Request $request)
-    {
-    //
-    }
-
-
-
 }

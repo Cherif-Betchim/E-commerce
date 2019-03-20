@@ -2,8 +2,8 @@
     box-sizing: border-box;
 }
 
-body, html{
-    height: 100%;
+body {
+    height: 100vh;
 }
 
 body {
@@ -12,7 +12,14 @@ body {
     font-size: 20px;
     color: #000;
     background: #fff;
-    margin: 0 auto;
+    padding-top: 158px;
+    display: flex;
+    flex-direction: column;
+}
+
+.content{
+    flex-grow: 1;
+    padding: 2rem 0;
 }
 
 .title-2{
@@ -255,7 +262,7 @@ body {
 
 .product-categories{
     background: #0b8793;
-    padding: 50px 0;
+    padding: 100px 0;
 }
 
 .product-categories .title-2{

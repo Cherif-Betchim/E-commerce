@@ -23,9 +23,6 @@ Route::get('/admin', 'AdminWelcomeController@index')->name('adminIndex');
 Route::get('/products', 'ProductController@index')->name('frontProductIndex');
 Route::get('/products/{id}', 'ProductController@show')->name('frontProductShow');
 
-//                                  - other
-Route::post('/cart', 'ProductController@cart')->name('frontProductCart');
-
 
 //-------------------------------------------------------------------
 //                             (Admin) Product
@@ -40,10 +37,31 @@ Route::post('/admin/products', 'AdminProductController@store')->name('productSto
 
 //                                  - update
 Route::get('/admin/products/edit/{id}', 'AdminProductController@edit')->name('productEdit');
-Route::patch('/admin/products', 'AdminProductController@update')->name('productUpdate');
+Route::put('/admin/products', 'AdminProductController@update')->name('productUpdate');
 
 //                                  - destroy
 Route::delete('/admin/products/{id}', 'AdminProductController@destroy')->name('productDestroy');
+
+
+
+//-------------------------------------------------------------------
+//                             (Front) Category
+//-------------------------------------------------------------------
+
+Route::get('/category/{id}', 'CategoryController@show')->name('frontCategoryShow');
+
+
+
+//-------------------------------------------------------------------
+//                             (Admin) Category
+//-------------------------------------------------------------------
+
+//                                  - read
+Route::get('/admin/categories', 'AdminCategoryController@index')->name('categoryIndex');
+
+//                                  - create
+Route::get('/admin/categories/create', 'AdminCategoryController@create')->name('categoryCreate');
+Route::post('/admin/categories', 'AdminCategoryController@store')->name('categoryStore');
 
 
 
@@ -53,7 +71,11 @@ Route::delete('/admin/products/{id}', 'AdminProductController@destroy')->name('p
 
 Route::get('/checkout','CheckoutController@show');
 Route::get('/my-account', 'AccountController@index');
-Route::get('/cart', 'CartController@index')->name('cartIndex');
 Route::get('/cgv', 'CgvController@show');
 Route::get('/contact', 'ContactController@show')->name('contactIndex');
 Route::post('/contact/results', 'ContactController@store');
+
+
+
+Route::get('/add-to-cart/{id}', 'CartController@getAddToCart')->name('productAddToCart');
+Route::get('/cart', 'CartController@getCart')->name('cartIndex');
