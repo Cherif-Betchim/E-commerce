@@ -151,7 +151,10 @@ body {
     background-size: cover;
     height: 100vh;
     margin-bottom: 100px;
-    margin-top: -2rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
 }
 
 .welcome .overlay{
@@ -188,6 +191,7 @@ body {
 
 .latest-product{
     margin-bottom: 100px;
+    margin-top: 90vh;
 }
 
 .latest-product .title-2{
