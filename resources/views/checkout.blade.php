@@ -8,7 +8,7 @@
         <div class="row">
             <div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
                 <h1>Chekout</h1>
-                <h4>Votre total : {{$total}}</h4>
+                <h4>Votre total : {{$total}} €</h4>
                 <form action="{{route('checkoutPay') }}" method="post" id="checkout-form">
 
                     <div class="row">
