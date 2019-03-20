@@ -37,16 +37,16 @@
                         <li>
                             <a href="/my-account"><i class="header-link fas fa-user"></i></a>
                         </li>
-
-                <li>
-                    <a href="{{ route('cartIndex') }}"><i class="fas fa-shopping-cart"></i>
-                    <span class="badge" >{{Session::has ('cart') ? Session::get('cart')->totalQty : ''}}</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="{{ route('adminIndex') }}"><i class="fas fa-cog"></i></a>
-                </li>
-            </ul>
-        </nav>
+                        <li>
+                            <a href="{{ route('cartIndex') }}"><i class="header-link fas fa-shopping-cart"></i></a>
+                            <span class="badge" >{{Session::has ('cart') ? Session::get('cart')->totalQty : ''}}</span>
+                        </li>
+                        <li>
+                            <a href="{{ route('adminIndex') }}"><i class="header-link fas fa-cog"></i></a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
     </div>
 </header>
