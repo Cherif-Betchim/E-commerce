@@ -35,14 +35,14 @@
                 <nav class="nav-right">
                     <ul class="menu">
                         <li>
-                            <a href="/my-account"><i class="header-link fas fa-user"></i></a>
+                            <a href="/my-account" class="header-link"><i class="fas fa-user"></i></a>
                         </li>
                         <li>
-                            <a href="{{ route('cartIndex') }}"><i class="header-link fas fa-shopping-cart"></i></a>
+                            <a href="{{ route('cartIndex') }}" class="header-link"><i class="fas fa-shopping-cart"></i></a>
                             <span class="badge" >{{Session::has ('cart') ? Session::get('cart')->totalQty : ''}}</span>
                         </li>
                         <li>
-                            <a href="{{ route('adminIndex') }}"><i class="header-link fas fa-cog"></i></a>
+                            <a href="{{ route('adminIndex') }}" class="header-link"><i class="fas fa-cog"></i></a>
                         </li>
                     </ul>
                 </nav>
