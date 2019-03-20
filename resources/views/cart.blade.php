@@ -18,12 +18,11 @@
                           <span class="label label-succes">{{ $product['price'] }}</span>
                           <div class="dropdown">
                               <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                  Dropdown button
+                                  Supprimer
                               </button>
                               <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                  <a class="dropdown-item" href="#">Action</a>
-                                  <a class="dropdown-item" href="#">Another action</a>
-                                  <a class="dropdown-item" href="#">Something else here</a>
+                                  <a class="dropdown-item" href="#">Supprimer 1 article</a>
+                                  <a class="dropdown-item" href="#">Supprimer tous les articles</a>
                               </div>
                           </div>
                       </li>
@@ -45,7 +44,7 @@
       </div>
       <div class="row">
           <div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
-              <button type="button" class="btn btn-success"> Checkout</button>
+              <button href="{{ route('checkoutIndex') }}" class="btn"> Payer</button>
 
           </div>
       </div>

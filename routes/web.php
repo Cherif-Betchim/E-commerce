@@ -61,7 +61,7 @@ Route::post('/admin/categories', 'AdminCategoryController@store')->name('categor
 //                             TO WORK ON
 //-------------------------------------------------------------------
 
-Route::get('/checkout','CheckoutController@show');
+
 Route::get('/my-account', 'AccountController@index');
 Route::get('/cgv', 'CgvController@show');
 Route::get('/contact', 'ContactController@show')->name('contactIndex');
@@ -71,3 +71,6 @@ Route::post('/contact/results', 'ContactController@store');
 
 Route::get('/add-to-cart/{id}', 'CartController@getAddToCart')->name('productAddToCart');
 Route::get('/cart', 'CartController@getCart')->name('cartIndex');
+
+Route::get('/checkout', 'CheckoutController@getCheckout')->name('checkoutIndex');
+Route::post('/checkout', 'CheckoutController@getCheckout')->name('checkoutPay');
