@@ -4,7 +4,7 @@
 
 @section('content')
 
-    <container>
+    <div class="container">
         <div class="row">
             <div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
                 <h1>Chekout</h1>
@@ -62,13 +62,10 @@
                     </div>
                     {{ csrf_field() }}
                     <button type="submit" class="btn">Payer</button>
-
                 </form>
             </div>
         </div>
-
-
-    </container>
+    </div>
 
 
 

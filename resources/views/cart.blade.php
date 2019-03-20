@@ -45,7 +45,7 @@
             <hr>
             <div class="row">
                 <div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
-                    <button type="button" class="btn btn-success"> Checkout</button>
+                    <a href="{{ route('checkoutIndex') }}" type="button" class="btn btn-success">Payer</a>
 
                 </div>
             </div>
