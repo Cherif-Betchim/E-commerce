@@ -110,7 +110,7 @@ class AdminProductController extends Controller
         $product->weight = $request->input('weight');
         $product->stock = $request->input('stock');
         $product->category_id = $request->input('category_id');
-
+        dd($product);
         $product->save();
 
         return redirect(route('productIndex'))

@@ -17,11 +17,11 @@
             @csrf
             @method('put')
 
-            <input type="hidden" name="id" value="{{ $category->id }}">
+            <input type="hidden" name="id" value="{{ $categories->id }}">
 
             <fieldset class="form-group">
-                <label for="category">Categorie : </label>
-                <textarea class="form-control" name="category" id="category">{{ $category->category }}</textarea>
+                <label for="name">Nom : </label>
+                <input type="text" class="form-control" name="name" id="name" value="{{ $categories->name }}">
             </fieldset>
             <button type="submit" class="btn btn-primary">Mettre à jour la Categore</button>
         </form>

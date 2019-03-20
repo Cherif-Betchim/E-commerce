@@ -1,9 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
-
-use App\Category;
 use Illuminate\Http\Request;
+use App\Category;
 
 class AdminCategoryController extends Controller
 {
@@ -67,10 +66,10 @@ class AdminCategoryController extends Controller
      */
     public function edit($id)
     {
-        $category = category::find($id);
+        $categories = category::find($id);
 
 
-        return view('admin.category.edit', ['category' => $category]);
+        return view('admin.category.edit', ['categories' => $categories]);
     }
 
     /**
@@ -87,15 +86,12 @@ class AdminCategoryController extends Controller
         ]);
 
         $id = $request->input('id');
-
-        $category = category::find($id);
+        $category = Category::find($id);
 
         $category->name = $request->input('name');
 
-
-
         $category->save();
-
+        dd($category);
         return redirect(route('categoryIndex'))
             ->with('flash_message', 'La  Catégorie (' . $category->name . ') a bien été modifié dans la base de données !')
             ->with('flash_type', 'alert-success');
