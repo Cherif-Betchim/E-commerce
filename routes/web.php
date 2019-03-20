@@ -48,7 +48,7 @@ Route::delete('/admin/products/{id}', 'AdminProductController@destroy')->name('p
 //                             (Front) Category
 //-------------------------------------------------------------------
 
-Route::get('/category/{id}', 'CategoryController@show')->name('frontCategoryShow');
+Route::get('/category/{category}', 'CategoryController@show')->name('frontCategoryShow');
 
 
 

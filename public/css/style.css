@@ -316,6 +316,37 @@ body {
 
 /****************************************************
 
+            CATEGORY/PRODUCTS
+
+*****************************************************/
+
+.categoryHeader .title-2 {
+    margin: 0 auto 5rem;
+    text-align: center;
+    color:#fff;
+    position: relative;
+    background: #0b8793;
+    padding: 30px 10px;
+    width: 50%;
+}
+
+.filter {
+    text-align: center;
+    margin-bottom: 5rem;
+}
+
+.filter .home-btn {
+    background: #360033;
+}
+
+.filter .home-btn.setback {
+    background: transparent;
+    color: #360033;
+}
+
+
+/****************************************************
+
             FOOTER
 
 *****************************************************/
