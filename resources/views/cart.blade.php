@@ -21,8 +21,9 @@
                                         Supprimer
                                     </button>
                                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item" href="{{route('cartAddByOne', ['id'=> $product['item']['id'] ] ) }}">Ajouter 1 article</a>
                                         <a class="dropdown-item" href="{{route('cartReduceByOne', ['id'=> $product['item']['id'] ] ) }}">Supprimer 1 article</a>
-                                        <a class="dropdown-item" href="#">Supprimer tous les articles</a>
+                                        <a class="dropdown-item" href="{{route('cartRemoveItem', ['id'=> $product['item']['id'] ] ) }}">Supprimer tous les articles</a>
                                     </div>
                                 </div>
                             </li>
