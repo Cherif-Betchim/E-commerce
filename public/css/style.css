@@ -22,9 +22,15 @@ body {
     padding: 2rem 0;
 }
 
+.title-1{
+    font-family: 'Playfair Display', sans-serif;
+    font-size: 55px;
+
+}
+
 .title-2{
     font-family: 'Playfair Display', sans-serif;
-    font-size: 50px;
+    font-size: 40px;
 }
 
 .title-3{
@@ -76,6 +82,25 @@ body {
 .cart-btn:hover{
     color:#0b8793;
     border-bottom:3px solid #0b8793;
+    text-decoration: none;
+}
+
+.form-btn{
+    color:#0b8793;
+    background: none;
+    text-transform: uppercase;
+    border-radius: 0;
+    padding: 15px 30px;
+    border: 3px solid #0b8793;
+    font-weight: 700;
+    font-size: 16px;
+    text-decoration: none;
+    transition: color .15s ease-in-out,     background-color .15s ease-in-out;
+}
+
+.form-btn:hover{
+    background: #0b8793;
+    color:#fff;
     text-decoration: none;
 }
 
@@ -347,6 +372,91 @@ body {
     background: transparent;
     color: #360033;
 }
+
+/****************************************************
+
+            CONTACT
+
+*****************************************************/
+.contact .title-1{
+    margin:auto;
+    text-align: center;
+    margin-bottom: 100px;
+    color:#fff;
+    position: relative;
+    background: #0b8793;
+    padding: 30px 10px;
+    width: 25%;
+}
+
+.contact .title-1::after{
+    content:"";
+    height: 5px;
+    width: 70px;
+    background: #0b8793;
+    position: absolute;
+    bottom: -10%;
+    left: 45%;
+    transform:rotate(90deg);
+}
+
+.contact .contactForm{
+    text-align:center;
+    width: 100%;
+}
+
+.contact .contactForm .title-2{
+    margin: 0 auto 50px auto;
+    padding-bottom: 10px;
+    width: 30%;
+    border-bottom: 3px solid #0b8793;
+}
+
+.contact .contactForm .userInfos{
+    margin-bottom: 100px;
+}
+
+.contact .contactForm .userInfos p label{
+    display: block;
+}
+
+.contact .contactForm .userInfos p input{
+    width: 50%;
+    border: 3px solid #0b8793;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.contact .contactForm .userMessage{
+    margin-bottom: 100px;
+}
+
+.contact .contactForm .userMessage p label{
+    display: block;
+}
+
+.contact .contactForm .userMessage p input{
+    width: 50%;
+    border: 3px solid #0b8793;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.contact .contactForm .userMessage select{
+    border: 3px solid #0b8793;
+    padding: 10px 0;
+    width: 50%;
+
+}
+
+.contact .contactForm .userMessage textarea{
+    width: 50%;
+    height: 30%;
+    border:3px solid #0b8793;
+    padding: 5px 10px 100px 10px;
+    margin-bottom: 50px;
+}
+
 
 
 /****************************************************
