@@ -30,6 +30,38 @@ class CartController extends Controller
         $cart = new Cart($oldCart);
         return view('cart', ['products' => $cart->items, 'totalPrice' => $cart->totalPrice]);
     }
+
+    public function getReduceByOne ($id)
+    {
+        $oldCart = Session::has('cart') ? Session::get('cart') : null;
+        $cart = new Cart($oldCart);
+        $cart->reduceByOne($id);
+
+        Session::put('cart', $cart);
+        return redirect()->route('cartIndex');
+    }
+
+    public function getAddByOne ($id)
+    {
+        $oldCart = Session::has('cart') ? Session::get('cart') : null;
+        $cart = new Cart($oldCart);
+        $cart->addByOne($id);
+
+        Session::put('cart', $cart);
+        return redirect()->route('cartIndex');
+    }
+
+    public function getRemoveItem ($id)
+    {
+        $oldCart = Session::has('cart') ? Session::get('cart') : null;
+        $cart = new Cart($oldCart);
+        $cart->removeItem($id);
+
+        Session::put('cart', $cart);
+        return redirect()->route('cartIndex');
+    }
+
+
 }
 
 
