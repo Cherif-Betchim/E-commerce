@@ -10,9 +10,12 @@ class OrderController extends Controller
     public function confirm(Request $request)
     {
         $order = $request->session()->get('order');
-        dd($order->products);
 
-        return view('order.confirm');
+        $confirmation = $order;
+
+        $request->session()->forget('order');
+
+        return view('order.confirm', ['order' => $confirmation]);
     }
 
     /**
