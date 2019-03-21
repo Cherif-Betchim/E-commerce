@@ -3,12 +3,16 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Order;
 
 class OrderController extends Controller
 {
-    public function confirm()
+    public function confirm(Request $request)
     {
+        $order = $request->session()->get('order');
+        dd($order->products);
 
+        return view('order.confirm');
     }
 
     /**
@@ -39,10 +43,21 @@ class OrderController extends Controller
      */
     public function store(Request $request)
     {
-        $order = $request->session()->get('cart');
-        $products = $order->items;
+        $cart = $request->session()->get('cart');
+        $products = $cart->items;
 
+        $order = Order::create([
+            'user' => 'Gladys',
+            'address' => '3 allée des gens cools, 38000 Hypeland'
+        ]);
 
+        foreach($products as $key => $product) {
+            $order->products()->attach($key, ['quantity' => $product['qty']]);
+        }
+
+        $request->session()->put('order', $order);
+        $request->session()->forget('cart');
+        return redirect(route('orderConfirm'));
     }
 
     /**

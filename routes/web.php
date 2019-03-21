@@ -75,6 +75,7 @@ Route::delete('/admin/categories/{id}', 'AdminCategoryController@destroy')->name
 //-------------------------------------------------------------------
 
 Route::post('/order', 'OrderController@store')->name('orderStore');
+Route::get('/checkout/confirmation', 'OrderController@confirm')->name('orderConfirm');
 
 
 //-------------------------------------------------------------------

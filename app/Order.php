@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Order extends Model
 {
+    protected $fillable = ['user', 'address'];
     public function products()
     {
         return $this->belongsToMany('App\Product')
