@@ -12,7 +12,7 @@
             @endif
         </aside>
 
-        <form action="{{ route('categoryIndex') }}" method="POST">
+        <form action="{{ route('categoryStore') }}" method="POST">
             @csrf
             <div class="form-group">
                 <label for="name">Nom : </label>
