@@ -330,6 +330,20 @@ body {
     width: 50%;
 }
 
+.products .product{
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.products .product .title-3{
+    font-family:'Raleway', sans-serif;
+}
+
+.products .product img{
+    margin-bottom: 15px;
+    border: 3px solid #0b8793;
+}
+
 .filter {
     text-align: center;
     margin-bottom: 5rem;
@@ -337,6 +351,10 @@ body {
 
 .filter .home-btn {
     background: #360033;
+}
+
+.filter .home-btn:hover {
+    color: #fff;
 }
 
 .filter .home-btn.setback {
