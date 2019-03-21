@@ -48,7 +48,7 @@ Route::delete('/admin/products/{id}', 'AdminProductController@destroy')->name('p
 //                             (Front) Category
 //-------------------------------------------------------------------
 
-Route::get('/category/{id}', 'CategoryController@show')->name('frontCategoryShow');
+Route::get('/category/{category}', 'CategoryController@show')->name('frontCategoryShow');
 
 
 
@@ -63,7 +63,11 @@ Route::get('/admin/categories', 'AdminCategoryController@index')->name('category
 Route::get('/admin/categories/create', 'AdminCategoryController@create')->name('categoryCreate');
 Route::post('/admin/categories', 'AdminCategoryController@store')->name('categoryStore');
 
-
+//                                  - update
+Route::get('/admin/categories/edit/{category}', 'AdminCategoryController@edit')->name('categoryEdit');
+Route::put('/admin/categories', 'AdminCategoryController@update')->name('categoryUpdate');
+//                                  - destroy
+Route::delete('/admin/categories/{id}', 'AdminCategoryController@destroy')->name('categoryDestroy');
 
 //-------------------------------------------------------------------
 //                             TO WORK ON

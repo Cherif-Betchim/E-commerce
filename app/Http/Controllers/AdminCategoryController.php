@@ -1,9 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
-
-use App\Category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
+use App\Category;
 
 class AdminCategoryController extends Controller
 {
@@ -14,7 +14,7 @@ class AdminCategoryController extends Controller
      */
     public function index()
     {
-        $categories = Category::select('id', 'name')->get();
+        $categories = Category::all();
 
         return view('admin.category.index', ['categories' => $categories]);
     }
@@ -37,11 +37,16 @@ class AdminCategoryController extends Controller
      */
     public function store(Request $request)
     {
-        $category = $request->validate([
+        $category = new Category;
+
+        $request->validate([
             'name' => ['required', 'min:3', 'max:40']
         ]);
 
-        Category::create($category);
+        $category->name = $request->input('name');
+        $category->slug = Str::slug($category->name, '-');
+
+        $category->save();
 
         return redirect(route('categoryCreate'))
             ->with('flash_message', 'La catégorie ' . $category['name'] . ' a bien été ajoutée à la base de données !')
@@ -65,9 +70,9 @@ class AdminCategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Category $category)
     {
-        //
+        return view('admin.category.edit', ['category' => $category]);
     }
 
     /**
@@ -77,9 +82,23 @@ class AdminCategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+        $request->validate([
+            'name' => ['required', 'min:3', 'max:40'],
+        ]);
+
+        $id = $request->input('id');
+        $category = Category::find($id);
+
+        $category->name = $request->input('name');
+        $category->slug = Str::slug($category->name, '-');
+
+        $category->save();
+
+        return redirect(route('categoryIndex'))
+            ->with('flash_message', 'La  Catégorie (' . $category->name . ') a bien été modifié dans la base de données !')
+            ->with('flash_type', 'alert-success');
     }
 
     /**
@@ -90,6 +109,12 @@ class AdminCategoryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $categories = category::find($id);
+
+        $categories->delete();
+
+        return redirect(route('categoryIndex'))
+            ->with('flash_message', 'La catégorie ' . $categories['name'] . ' a bien été ajoutée à la base de données !')
+            ->with('flash_type', 'alert-success');
     }
 }

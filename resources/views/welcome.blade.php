@@ -75,7 +75,7 @@
                 </article>
             </div>
             <p class="btn-container">
-                <a href="/products" class="home-btn">Plus de produits</a>
+                <a href="{{ route('') }}" class="home-btn">Plus de produits</a>
             </p>
         </div>
     </div>
