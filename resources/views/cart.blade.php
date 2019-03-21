@@ -15,7 +15,7 @@
                             <li class="list-group-item">
                                 <span class="badge">{{ $product['qty'] }}</span>
                                 <strong>{{ $product['item']['name'] }}</strong>
-                                <span class="label label-succes">{{ $product['price'] }}</span>
+                                <span class="label label-succes">{{ $product['price'] /100 }}€</span>
                                 <div class="dropdown">
                                     <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         Quantité
@@ -37,7 +37,7 @@
 
             <div class="row">
                 <div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
-                    <strong>Total :{{ $totalPrice }}</strong>
+                    <strong>Total :{{ $totalPrice /100}} €</strong>
 
                 </div>
             </div>
