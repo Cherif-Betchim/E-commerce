@@ -83,6 +83,10 @@ Route::post('/contact/results', 'ContactController@store');
 
 Route::get('/add-to-cart/{id}', 'CartController@getAddToCart')->name('productAddToCart');
 Route::get('/cart', 'CartController@getCart')->name('cartIndex');
+Route::get('/reduce/{id}', 'CartController@getReduceByOne')->name('cartReduceByOne');
+Route::get('/add/{id}', 'CartController@getAddByOne')->name('cartAddByOne');
+Route::get('/remove/{id}', 'CartController@getRemoveItem')->name('cartRemoveItem');
+
 
 Route::get('/checkout', 'CheckoutController@getCheckout')->name('checkoutIndex');
 Route::post('/checkout', 'CheckoutController@getCheckout')->name('checkoutPay');
