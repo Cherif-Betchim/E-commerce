@@ -30,6 +30,12 @@
                                 <td class="price color">{{ $price * $qty }}€</td>
                             </tr>
                         @endforeach
+                        <tr>
+                            <td colspan="4"></td>
+                            <td class="price bold color">
+                                {{ $totalPrice/100 }}€
+                            </td>
+                        </tr>
                         </tbody>
                     </table>
                 @else

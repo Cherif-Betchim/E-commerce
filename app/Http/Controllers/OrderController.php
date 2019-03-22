@@ -10,12 +10,17 @@ class OrderController extends Controller
     public function confirm(Request $request)
     {
         $order = $request->session()->get('order');
+        $totalPrice = $request->session()->get('totalPrice');
 
         $confirmation = $order;
+        $confirmationPrice = $totalPrice;
 
-        $request->session()->forget('order');
+        $request->session()->forget(['order', 'totalPrice']);
 
-        return view('order.confirm', ['order' => $confirmation]);
+        return view('order.confirm', [
+            'order' => $confirmation,
+            'totalPrice' => $confirmationPrice
+        ]);
     }
 
     /**
@@ -49,9 +54,14 @@ class OrderController extends Controller
         $cart = $request->session()->get('cart');
         $products = $cart->items;
 
+        $request->validate([
+            'name' => ['required'],
+            'address' => ['required', 'min:10']
+        ]);
+
         $order = Order::create([
-            'user' => 'Gladys',
-            'address' => '3 allée des gens cools, 38000 Hypeland'
+            'user' => $request->input('name'),
+            'address' => $request->input('address')
         ]);
 
         foreach($products as $key => $product) {
@@ -59,7 +69,9 @@ class OrderController extends Controller
         }
 
         $request->session()->put('order', $order);
+        $request->session()->put('totalPrice', $cart->totalPrice);
         $request->session()->forget('cart');
+
         return redirect(route('orderConfirm'));
     }
 
