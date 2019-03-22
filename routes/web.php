@@ -69,6 +69,15 @@ Route::put('/admin/categories', 'AdminCategoryController@update')->name('categor
 //                                  - destroy
 Route::delete('/admin/categories/{id}', 'AdminCategoryController@destroy')->name('categoryDestroy');
 
+
+//-------------------------------------------------------------------
+//                             (Front) Order
+//-------------------------------------------------------------------
+
+Route::post('/order', 'OrderController@store')->name('orderStore');
+Route::get('/checkout/confirmation', 'OrderController@confirm')->name('orderConfirm');
+
+
 //-------------------------------------------------------------------
 //                             TO WORK ON
 //-------------------------------------------------------------------
@@ -89,4 +98,3 @@ Route::get('/remove/{id}', 'CartController@getRemoveItem')->name('cartRemoveItem
 
 
 Route::get('/checkout', 'CheckoutController@getCheckout')->name('checkoutIndex');
-Route::post('/checkout', 'CheckoutController@getCheckout')->name('checkoutPay');
