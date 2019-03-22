@@ -25,4 +25,21 @@
             <a href="{{ route('frontProductIndex') }}">Retour à la liste des produits</a>
         </p>
     </div>
+
+    <h4>Ajouter un commentaire</h4>
+
+
+    <div class="comments">
+        @foreach ($product->comments as $comment)
+
+            <article>
+
+                {{$comment->comment}}
+
+            </article>
+
+        @endforeach
+    </div>
+
+
 @endsection

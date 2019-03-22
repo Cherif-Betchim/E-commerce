@@ -90,3 +90,5 @@ Route::get('/remove/{id}', 'CartController@getRemoveItem')->name('cartRemoveItem
 
 Route::get('/checkout', 'CheckoutController@getCheckout')->name('checkoutIndex');
 Route::post('/checkout', 'CheckoutController@getCheckout')->name('checkoutPay');
+
+Route::post('/comment/store', 'CommentController@storeComment')->name('commentStore');
