@@ -30,15 +30,30 @@
 
 
     <div class="comments">
+
+        {{--Affiche les commentaires--}}
         @foreach ($product->comments as $comment)
 
             <article>
-
+                {{$comment->name}}
+                <br>
                 {{$comment->comment}}
 
             </article>
 
         @endforeach
+
+    </div>
+    <div class="card">
+        <div class="card-block">
+            <form>
+                <div class="form-group">
+                    <textarea name="comment" placeholder="Votre commentaire.." class="form-control"></textarea>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary">Ajouter commentaire</button>
+            </form>
+        </div>
     </div>
 
 
