@@ -12,7 +12,7 @@ class CartController extends Controller
     public function getAddToCart (Request $request, $id)
     {
         $product = Product::find($id);
-        $oldCart = Session::has('cart') ? Session::get('cart') : null;
+        $oldCart = Session::has('cart') ? Session::get('cart') : null; //une cle 'cart' presente ? on l'a recup
         $cart = new Cart($oldCart);
         $cart->add($product, $product->id);
 
@@ -23,11 +23,11 @@ class CartController extends Controller
 
     public function getCart()
     {
-        if (!Session::has('cart')){
+        if (!Session::has('cart')){ //affiche le panier meme vide
             return view('cart');
         }
         $oldCart = Session::get('cart');
-        $cart = new Cart($oldCart);
+        $cart = new Cart($oldCart); //recreer un panier assure d'avoir tjrs un panier valide par "securité" (INUTILE)
         return view('cart', ['products' => $cart->items, 'totalPrice' => $cart->totalPrice]);
     }
 

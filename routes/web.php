@@ -103,5 +103,7 @@ Route::get('/reduce/{id}', 'CartController@getReduceByOne')->name('cartReduceByO
 Route::get('/add/{id}', 'CartController@getAddByOne')->name('cartAddByOne');
 Route::get('/remove/{id}', 'CartController@getRemoveItem')->name('cartRemoveItem');
 
-
 Route::get('/checkout', 'CheckoutController@getCheckout')->name('checkoutIndex');
+
+Route::post('/products/{id}/comments', 'CommentsController@store')->name('addComment');
+

@@ -21,4 +21,9 @@ class Product extends Model
             ->withPivot('quantity')
             ->withTimestamps();
     }
+
+    public function comments()
+    {
+        return $this->hasMany('App\Comment');
+    }
 }
