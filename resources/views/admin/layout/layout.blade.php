@@ -20,6 +20,7 @@
             <a class="nav-link btn btn-primary" href="{{ route('productCreate') }}">Ajouter un produit</a>
             <a class="nav-link btn btn-primary" href="{{ route('categoryIndex') }}">Liste des catégories</a>
             <a class="nav-link btn btn-primary" href="{{ route('categoryCreate') }}">Ajouter une catégorie</a>
+            <a class="nav-link btn btn-primary" href="{{ route('adminOrderIndex') }}">Liste des commandes</a>
             <a class="nav-link btn btn-secondary" href="{{ route('index') }}">Sortir de l'admin</a>
         </nav>
     </header>
