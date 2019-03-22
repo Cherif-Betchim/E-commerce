@@ -318,15 +318,12 @@ body {
     transform:rotate(90deg);
 }
 
-.product-categories .category li{
-    display: inline-block;
-    list-style: none;
+.product-categories .category div{
     text-align: center;
-
-
+    margin-bottom: 1.5rem;
 }
 
-.product-categories .category li a{
+.product-categories .category div a{
     text-decoration: none;
 }
 
