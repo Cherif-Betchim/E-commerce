@@ -2,6 +2,7 @@
 
 @section('title', 'Ajouter un produit')
 
+
 @section('content')
     <div class="container productCreate">
         <aside>
@@ -11,9 +12,8 @@
                 </div>
             @endif
         </aside>
-
         <form action="{{ route('productIndex') }}" method="POST">
-            {{ csrf_field() }}
+
             <fieldset class="form-group">
                 <label for="name">Nom : </label>
                 <input type="text" class="form-control @if ($errors->has('name')) {{ 'is-invalid' }} @endif" name="name" id="name" placeholder="Nom du produit" value="{{ old('name') }}" required>
@@ -39,7 +39,8 @@
             <fieldset class="form-group">
                 <label for="category_id">Catégorie : </label>
                 <select multiple class="form-control" name="category_id" id="category_id" required>
-                    @foreach ($categories as $category)
+
+                @foreach ($categories as $category)
                         <option value="{{ $category->id }}">{{ $category->name }}</option>
                     @endforeach
                 </select>

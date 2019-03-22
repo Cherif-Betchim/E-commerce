@@ -24,6 +24,8 @@ Route::get('/products', 'ProductController@index')->name('frontProductIndex');
 Route::get('/products/{id}', 'ProductController@show')->name('frontProductShow');
 
 
+
+
 //-------------------------------------------------------------------
 //                             (Admin) Product
 //-------------------------------------------------------------------
@@ -86,3 +88,11 @@ Route::get('/cart', 'CartController@getCart')->name('cartIndex');
 
 Route::get('/checkout', 'CheckoutController@getCheckout')->name('checkoutIndex');
 Route::post('/checkout', 'CheckoutController@getCheckout')->name('checkoutPay');
+
+
+Route::get('/comment/create', 'CommentController@create')->name('commentCreate');
+Route::post('/comment', 'CommentController@store')->name('commentStore');
+
+
+
+Route::get('/comment/show', 'CommentController@sho')->name('commentSho');
