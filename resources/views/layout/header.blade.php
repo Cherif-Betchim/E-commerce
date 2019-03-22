@@ -9,10 +9,22 @@
                                 ACCUEIL
                             </a>
                         </li>
-                        <li class="produits">
-                            <a href="{{ route('frontProductIndex') }}" class="header-link">
+                        <li class="produits dropdown">
+                            <a href="#" class="header-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                                 PRODUITS
                             </a>
+                            <div class="dropdown-menu">
+                                @php
+                                $categories = App\Category::all();
+                                @endphp
+                                @foreach($categories as $category)
+                                    <a class="dropdown-item" href="{{ route('frontCategoryShow', ['category' => $category]) }}">
+                                        {{ $category->name }}
+                                    </a>
+                                @endforeach
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="{{ route('frontProductIndex') }}">Tous les produits</a>
+                            </div>
                         </li>
                         <li class="produits">
                             <a href="{{ route('contactIndex') }}" class="header-link">
