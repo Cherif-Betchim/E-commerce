@@ -10,10 +10,15 @@ class WelcomeController extends Controller
 {
     public function index()
     {
+        $categories = Category::all();
+
         $latestProducts = Product::all()
             ->sortBy('created_at')
             ->take(-3);
 
-        return view('welcome', ['latestProducts' => $latestProducts]);
+        return view('welcome', [
+            'latestProducts' => $latestProducts,
+            'categories' => $categories
+        ]);
     }
 }
