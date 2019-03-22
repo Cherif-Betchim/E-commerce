@@ -14,11 +14,6 @@ class WelcomeController extends Controller
             ->sortBy('created_at')
             ->take(-3);
 
-        $categories = Category::all();
-
-        return view('welcome', [
-            'latestProducts' => $latestProducts,
-            'categories' => $categories
-        ]);
+        return view('welcome', ['latestProducts' => $latestProducts]);
     }
 }
