@@ -17,6 +17,7 @@ class CreateOrdersTable extends Migration
             $table->bigIncrements('id');
             $table->string('user');
             $table->string('address');
+            $table->unsignedInteger('total_price');
             $table->timestampsTz();
             $table->softDeletesTz();
         });
