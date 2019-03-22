@@ -16,7 +16,10 @@ class Product extends Model
 
     public function orders()
     {
-        return $this->hasMany('App\Order');
+        return $this->belongsToMany('App\Order')
+            ->as('command_line')
+            ->withPivot('quantity')
+            ->withTimestamps();
     }
 
     public function comments()

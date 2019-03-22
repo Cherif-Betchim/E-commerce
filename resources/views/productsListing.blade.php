@@ -1,4 +1,4 @@
-<div class="container latest-product">
+<div class="container products">
     <div class="row">
         @foreach ($products as $product)
             <article class="product col-lg-4">
