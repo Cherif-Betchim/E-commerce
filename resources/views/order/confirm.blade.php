@@ -33,7 +33,7 @@
                         <tr>
                             <td colspan="4"></td>
                             <td class="price bold color">
-                                {{ $totalPrice/100 }}€
+                                {{ $order->total_price/100 }}€
                             </td>
                         </tr>
                         </tbody>

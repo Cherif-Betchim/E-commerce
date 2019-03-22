@@ -4,23 +4,19 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Order;
+use App\Product;
 
 class OrderController extends Controller
 {
     public function confirm(Request $request)
     {
         $order = $request->session()->get('order');
-        $totalPrice = $request->session()->get('totalPrice');
 
         $confirmation = $order;
-        $confirmationPrice = $totalPrice;
 
         $request->session()->forget(['order', 'totalPrice']);
 
-        return view('order.confirm', [
-            'order' => $confirmation,
-            'totalPrice' => $confirmationPrice
-        ]);
+        return view('order.confirm', ['order' => $confirmation]);
     }
 
     /**
@@ -61,18 +57,36 @@ class OrderController extends Controller
 
         $order = Order::create([
             'user' => $request->input('name'),
-            'address' => $request->input('address')
+            'address' => $request->input('address'),
+            'total_price' => $cart->totalPrice
         ]);
 
+        $inStock = true;
+        $stockZero = [];
+
         foreach($products as $key => $product) {
-            $order->products()->attach($key, ['quantity' => $product['qty']]);
+            $productInDB = Product::find($key);
+            if($productInDB->stock > $product['qty']) {
+                $order->products()->attach($key, ['quantity' => $product['qty']]);
+            } else {
+                $inStock = false;
+                array_push($stockZero, $productInDB->name);
+            }
         }
 
-        $request->session()->put('order', $order);
-        $request->session()->put('totalPrice', $cart->totalPrice);
-        $request->session()->forget('cart');
+        if($inStock) {
+            if($request->session()->has('stockZero')) {
+                $request->session()->forget('stockZero');
+            }
+            $request->session()->put('order', $order);
+            $request->session()->forget('cart');
 
-        return redirect(route('orderConfirm'));
+            return redirect(route('orderConfirm'));
+        } else {
+            $request->session()->put('stockZero', $stockZero);
+            return redirect(route('cartIndex'));
+        }
+
     }
 
     /**
