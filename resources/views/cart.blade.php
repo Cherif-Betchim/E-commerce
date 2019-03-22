@@ -5,11 +5,6 @@
 @section('content')
     <div class="container">
         @if(Session::has('cart'))
-            @if(session()->has('stockZero'))
-                @foreach(session('stockZero') as $productName)
-                    L'article {{ $productName }} n'est plus en stock, merci de mettre la quantité demandée à zéro.
-                @endforeach
-            @endif
             <div class="row">
                 <div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
                     <ul class="list-group">

@@ -52,7 +52,7 @@ class OrderController extends Controller
 
         $request->validate([
             'name' => ['required'],
-            'address' => ['required', 'min:10']
+            'address' => ['required', 'min:3']
         ]);
 
         $order = Order::create([
@@ -61,32 +61,14 @@ class OrderController extends Controller
             'total_price' => $cart->totalPrice
         ]);
 
-        $inStock = true;
-        $stockZero = [];
-
         foreach($products as $key => $product) {
-            $productInDB = Product::find($key);
-            if($productInDB->stock > $product['qty']) {
-                $order->products()->attach($key, ['quantity' => $product['qty']]);
-            } else {
-                $inStock = false;
-                array_push($stockZero, $productInDB->name);
-            }
+            $order->products()->attach($key, ['quantity' => $product['qty']]);
         }
 
-        if($inStock) {
-            if($request->session()->has('stockZero')) {
-                $request->session()->forget('stockZero');
-            }
-            $request->session()->put('order', $order);
-            $request->session()->forget('cart');
+        $request->session()->put('order', $order);
+        $request->session()->forget('cart');
 
-            return redirect(route('orderConfirm'));
-        } else {
-            $request->session()->put('stockZero', $stockZero);
-            return redirect(route('cartIndex'));
-        }
-
+        return redirect(route('orderConfirm'));
     }
 
     /**
