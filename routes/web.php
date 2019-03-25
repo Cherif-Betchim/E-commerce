@@ -11,8 +11,81 @@
 |
 */
 
+
+// Seuls les utilisateurs authentifiés peuvent accéder aux routes suivantes
+Route::middleware(['auth'])->group(function() {
+
+    // Les Controllers des routes suivantes se trouvent dans le dossier Controllers/Admin
+    Route::namespace('Admin')->group(function() {
+
+        /*
+        | Les routes suivantes auront automatiquement le préfix "admin"
+        | Par exemple : la route 'products' correspond à l'url '/admin/products
+        */
+        Route::prefix('admin')->group(function() {
+
+            //                                  welcome
+            Route::get('/', 'WelcomeController@index')->name('adminIndex');
+
+
+            //-------------------------------------------------------------------
+            //                             (Admin) Product
+            //-------------------------------------------------------------------
+
+            //                                  - read
+            Route::get('products', 'ProductController@index')->name('productIndex');
+
+            //                                  - create
+            Route::get('products/create', 'ProductController@create')->name('productCreate');
+            Route::post('products', 'ProductController@store')->name('productStore');
+
+            //                                  - update
+            Route::get('products/edit/{id}', 'ProductController@edit')->name('productEdit');
+            Route::put('products', 'ProductController@update')->name('productUpdate');
+
+            //                                  - destroy
+            Route::delete('products/{id}', 'ProductController@destroy')->name('productDestroy');
+
+
+            //-------------------------------------------------------------------
+            //                             (Admin) Category
+            //-------------------------------------------------------------------
+
+            //                                  - read
+            Route::get('/admin/categories', 'CategoryController@index')->name('categoryIndex');
+
+            //                                  - create
+            Route::get('/admin/categories/create', 'CategoryController@create')->name('categoryCreate');
+            Route::post('/admin/categories', 'CategoryController@store')->name('categoryStore');
+
+            //                                  - update
+            Route::get('/admin/categories/edit/{category}', 'CategoryController@edit')->name('categoryEdit');
+            Route::put('/admin/categories', 'CategoryController@update')->name('categoryUpdate');
+
+            //                                  - destroy
+            Route::delete('/admin/categories/{id}', 'CategoryController@destroy')->name('categoryDestroy');
+
+
+            //-------------------------------------------------------------------
+            //                             (Admin) Order
+            //-------------------------------------------------------------------
+
+            Route::get('/admin/orders', 'OrderController@index')->name('adminOrderIndex');
+            Route::get('/admin/orders/{id}', 'OrderController@show')->name('adminOrderShow');
+
+        });
+    });
+});
+
+
+
+
+
+
+
+
 Route::get('/', 'WelcomeController@index')->name('index');
-Route::get('/admin', 'AdminWelcomeController@index')->name('adminIndex');
+
 
 
 //-------------------------------------------------------------------
@@ -24,23 +97,7 @@ Route::get('/products', 'ProductController@index')->name('frontProductIndex');
 Route::get('/products/{id}', 'ProductController@show')->name('frontProductShow');
 
 
-//-------------------------------------------------------------------
-//                             (Admin) Product
-//-------------------------------------------------------------------
 
-//                                  - read
-Route::get('/admin/products', 'AdminProductController@index')->name('productIndex');
-
-//                                  - create
-Route::get('/admin/products/create', 'AdminProductController@create')->name('productCreate');
-Route::post('/admin/products', 'AdminProductController@store')->name('productStore');
-
-//                                  - update
-Route::get('/admin/products/edit/{id}', 'AdminProductController@edit')->name('productEdit');
-Route::put('/admin/products', 'AdminProductController@update')->name('productUpdate');
-
-//                                  - destroy
-Route::delete('/admin/products/{id}', 'AdminProductController@destroy')->name('productDestroy');
 
 
 
@@ -52,22 +109,6 @@ Route::get('/category/{category}', 'CategoryController@show')->name('frontCatego
 
 
 
-//-------------------------------------------------------------------
-//                             (Admin) Category
-//-------------------------------------------------------------------
-
-//                                  - read
-Route::get('/admin/categories', 'AdminCategoryController@index')->name('categoryIndex');
-
-//                                  - create
-Route::get('/admin/categories/create', 'AdminCategoryController@create')->name('categoryCreate');
-Route::post('/admin/categories', 'AdminCategoryController@store')->name('categoryStore');
-
-//                                  - update
-Route::get('/admin/categories/edit/{category}', 'AdminCategoryController@edit')->name('categoryEdit');
-Route::put('/admin/categories', 'AdminCategoryController@update')->name('categoryUpdate');
-//                                  - destroy
-Route::delete('/admin/categories/{id}', 'AdminCategoryController@destroy')->name('categoryDestroy');
 
 
 //-------------------------------------------------------------------
@@ -77,12 +118,6 @@ Route::delete('/admin/categories/{id}', 'AdminCategoryController@destroy')->name
 Route::post('/order', 'OrderController@store')->name('orderStore');
 Route::get('/checkout/confirmation', 'OrderController@confirm')->name('orderConfirm');
 
-//-------------------------------------------------------------------
-//                             (Admin) Order
-//-------------------------------------------------------------------
-
-Route::get('/admin/orders', 'AdminOrderController@index')->name('adminOrderIndex');
-Route::get('/admin/orders/{id}', 'AdminOrderController@show')->name('adminOrderShow');
 
 
 //-------------------------------------------------------------------
