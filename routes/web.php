@@ -107,3 +107,7 @@ Route::get('/checkout', 'CheckoutController@getCheckout')->name('checkoutIndex')
 
 Route::post('/products/{id}/comments', 'CommentsController@store')->name('addComment');
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
