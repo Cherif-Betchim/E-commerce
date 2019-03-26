@@ -370,6 +370,7 @@ body {
     width: 50%;
 }
 
+
 .products .product{
     text-align: center;
     margin-bottom: 50px;
@@ -402,6 +403,62 @@ body {
     color: #360033;
 }
 
+/****************************************************
+
+            COMMENTS
+
+*****************************************************/
+
+.container-comments{
+    text-align: center;
+}
+
+.container-comments h3 {
+    padding:20px;
+    text-decoration:underline;
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    margin-top: 8%;
+    margin-right: 20%;
+    margin-left: 20%;
+
+}
+
+.display-comments{
+    display: flex;
+    flex-direction: column;
+    margin-top: 2%;
+    margin-right: 10%;
+    margin-left: 10%;
+    font-size: 16px;
+    border: 1px double silver;
+    background-color:whitesmoke;
+}
+
+.display-comments p{
+    font-size: 13px;
+    padding: 20px;
+}
+
+.form-comments{
+    margin-left:200px;
+    margin-right:200px;
+    margin-top:100px;
+    margin-bottom:50px;
+}
+
+.form-comments h5{
+    text-decoration: underline;
+    text-align: center;
+}
+
+.form-comments textarea{
+    height: 200px;
+    min-height: 150px;
+}
 /****************************************************
 
             CONTACT
