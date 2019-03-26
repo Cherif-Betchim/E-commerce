@@ -48,13 +48,14 @@
                     </tr>
                     </tbody>
                 </table>
+                <a href="{{ route('index') }}" class="home-btn">Continuer vos achats</a>
+                <a href="{{ route('checkoutIndex') }}" class="btn btn-success"> Payer</a>
             @else
                 <p class="col-7">
                     Aucun article dans le panier.
                 </p>
+                <a href="{{ route('index') }}" class="home-btn">Continuer vos achats</a>
             @endif
-            <a href="{{ route('index') }}" class="home-btn">Continuer vos achats</a>
-                <a href="{{ route('checkoutIndex') }}" class="btn btn-success"> Payer</a>
         </div>
     </div>
 @endsection
