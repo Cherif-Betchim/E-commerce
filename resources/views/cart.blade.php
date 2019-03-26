@@ -50,7 +50,7 @@
                 </table>
                 <a href="{{ route('index') }}" class="home-btn">Continuer vos achats</a>
                 <a href="{{ route('checkoutIndex') }}" class="btn btn-success"> Payer</a>
-            @else
+                @else
                 <p class="col-7">
                     Aucun article dans le panier.
                 </p>
