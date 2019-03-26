@@ -144,5 +144,3 @@ Route::post('/products/{id}/comments', 'CommentsController@store')->name('addCom
 
 
 Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');

@@ -10,16 +10,17 @@
                     <div class="login col-lg-5">
                         <div class="container">
                             <h2 class="title-2">Bienvenue sur notre boutique <span class="color">ILOT-3</span></h2>
-
-                            <p>
-                                <span class="italic"> Pssssst ! Par ici !</span><br>Commencez par vous créer un compte ou vous connecter.
-                            </p>
-                            <a href="/" class="home-btn">
-                                Se Connecter
-                            </a>
-                            <a href="/" class="home-btn">
-                                Créer un compte
-                            </a>
+                            @guest
+                                <p>
+                                    <span class="italic"> Pssssst ! Par ici !</span><br>Commencez par vous créer un compte ou vous connecter.
+                                </p>
+                                <a href="{{ route('login') }}" class="home-btn">
+                                    Se Connecter
+                                </a>
+                                <a href="{{ route('register') }}" class="home-btn">
+                                    Créer un compte
+                                </a>
+                            @endguest
                         </div>
                     </div>
                     <div class="col-lg-7">
