@@ -15,7 +15,6 @@ class UpdateUsersTable extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             $table->string('first_name')->after('id');
-            $table->boolean('is_admin')->default(false)->after('password');
         });
     }
 
@@ -27,7 +26,7 @@ class UpdateUsersTable extends Migration
     public function down()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->dropColumn(['first_name', 'is_admin']);
+            $table->dropColumn('first_name');
         });
     }
 }
