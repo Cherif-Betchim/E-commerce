@@ -1,4 +1,6 @@
-@extends('layouts.app')
+@extends('layout.layout')
+
+@section('title', 'Réinitialiser le mot de passe')
 
 @section('content')
 <div class="container">

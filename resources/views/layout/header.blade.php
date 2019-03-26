@@ -47,7 +47,7 @@
                 <nav class="nav-right">
                     <ul class="menu">
                         <li>
-                            <a href="/my-account" class="header-link"><i class="fas fa-user"></i></a>
+
                         </li>
                         <li>
                             <a href="{{ route('cartIndex') }}" class="header-link"><i class="fas fa-shopping-cart"></i></a>
@@ -55,6 +55,33 @@
                         </li>
                         <li>
                             <a href="{{ route('adminIndex') }}" class="header-link"><i class="fas fa-cog"></i></a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a id="navbarDropdown" class="header-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                <i class="fas fa-user"></i> <span class="caret"></span>
+                            </a>
+
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                @auth
+                                    <a class="dropdown-item" href="/my-account">{{ Auth::user()->name }}</a>
+                                    <div class="dropdown-divider"></div>
+                                @endauth
+                                @guest
+                                    <a class="dropdown-item" href="{{ route('login') }}">Se connecter</a>
+                                    <a class="dropdown-item" href="{{ route('register') }}">Créer un compte</a>
+                                @endguest
+                                @auth
+                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
+                                @endauth
+                            </div>
                         </li>
                     </ul>
                 </nav>
