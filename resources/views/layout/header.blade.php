@@ -53,9 +53,6 @@
                             <a href="{{ route('cartIndex') }}" class="header-link"><i class="fas fa-shopping-cart"></i></a>
                             <span class="badge" >{{Session::has ('cart') ? Session::get('cart')->totalQty : ''}}</span>
                         </li>
-                        <li>
-                            <a href="{{ route('adminIndex') }}" class="header-link"><i class="fas fa-cog"></i></a>
-                        </li>
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="header-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                 <i class="fas fa-user"></i> <span class="caret"></span>
@@ -83,6 +80,11 @@
                                 @endauth
                             </div>
                         </li>
+                        @auth
+                            <li>
+                                <a href="{{ route('adminIndex') }}" class="header-link"><i class="fas fa-cog"></i></a>
+                            </li>
+                        @endauth
                     </ul>
                 </nav>
             </div>
