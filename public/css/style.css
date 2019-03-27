@@ -549,11 +549,15 @@ body {
     float:right;
 }
 
+
+
 /****************************************************
 
             ORDER
 
 *****************************************************/
+
+/*          confirmation                            */
 
 .orderConfirm {
     text-align: center;
@@ -582,6 +586,19 @@ body {
     background: #2f15424f;
     color: #fff;
 }
+
+/*          historique                            */
+
+.orderIndex .title-2 {
+    margin: 0 auto 5rem;
+    text-align: center;
+    color:#fff;
+    position: relative;
+    background: #360033;
+    padding: 30px 10px;
+    width: 50%;
+}
+
 
 
 /****************************************************

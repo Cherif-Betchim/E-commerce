@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Auth;
 use Illuminate\Http\Request;
 use App\Order;
 use App\Product;
@@ -27,7 +28,7 @@ class OrderController extends Controller
     public function index()
     {
         $orders = Order::all();
-
+        
         return view('order.index', ['orders' => $orders]);
     }
 
@@ -52,14 +53,9 @@ class OrderController extends Controller
         $cart = $request->session()->get('cart');
         $products = $cart->items;
 
-        $request->validate([
-            'name' => ['required'],
-            'address' => ['required', 'min:3']
-        ]);
-
         $order = Order::create([
-            'user' => $request->input('name'),
-            'address' => $request->input('address'),
+            'user_id' => Auth::id(),
+            'address_id' => Auth::address(),
             'total_price' => $cart->totalPrice
         ]);
 
