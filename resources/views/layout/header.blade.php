@@ -81,9 +81,11 @@
                             </div>
                         </li>
                         @auth
-                            <li>
-                                <a href="{{ route('adminIndex') }}" class="header-link"><i class="fas fa-cog"></i></a>
-                            </li>
+                            @if (Auth::user() && Auth::user()->is_admin == 1)
+                                <li>
+                                    <a href="{{ route('adminIndex') }}" class="header-link"><i class="fas fa-cog"></i></a>
+                                </li>
+                            @endif
                         @endauth
                     </ul>
                 </nav>
