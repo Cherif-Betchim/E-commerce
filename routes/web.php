@@ -79,6 +79,16 @@ Route::middleware(['admin'])->group(function() {
 
 
 
+Route::middleware(['auth'])->group(function() {
+
+    Route::namespace('User')->group(function() {
+
+        Route::prefix('user')->group(function() {
+
+            Route::get('/index', 'AccountController@index')->name('userIndex');
+        });
+    });
+});
 
 
 
@@ -125,7 +135,7 @@ Route::get('/checkout/confirmation', 'OrderController@confirm')->name('orderConf
 //-------------------------------------------------------------------
 
 
-Route::get('/my-account', 'AccountController@index');
+
 Route::get('/cgv', 'CgvController@show');
 Route::get('/contact', 'ContactController@show')->name('contactIndex');
 Route::post('/contact/results', 'ContactController@store');

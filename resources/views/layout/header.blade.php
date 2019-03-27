@@ -60,7 +60,7 @@
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                 @auth
-                                    <a class="dropdown-item" href="/my-account">{{ Auth::user()->name }}</a>
+                                    <a class="dropdown-item" href={{route('userIndex')}}>{{ Auth::user()->name }}</a>
                                     <div class="dropdown-divider"></div>
                                 @endauth
                                 @guest

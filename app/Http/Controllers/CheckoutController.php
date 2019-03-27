@@ -7,6 +7,7 @@ use App\Product;
 use Session;
 use App\Cart;
 use App\Checkout;
+use Illuminate\Support\Facades\Auth;
 
 class CheckoutController extends Controller
 {
@@ -14,10 +15,13 @@ class CheckoutController extends Controller
         if (!Session::has('cart')){
             return view ('cart');
         }
-        $oldCart = Session::get('cart');
-        $cart = new Cart($oldCart);
-        $total = $cart->totalPrice;
-        return view('checkout',  ['total' => $total]);
+        if(Auth::user()) {
+            $oldCart = Session::get('cart');
+            $cart = new Cart($oldCart);
+            $total = $cart->totalPrice;
+            return view('checkout', ['total' => $total]);
+        }
+        return redirect(route('login'));
     }
 }
 ?>
