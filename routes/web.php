@@ -86,6 +86,10 @@ Route::middleware(['auth'])->group(function() {
         Route::prefix('user')->group(function() {
 
             Route::get('/index', 'AccountController@index')->name('userIndex');
+            Route::get('/profile', 'ProfileController@index')->name('userProfile');
+            Route::get('/addresses', 'AddressesController@index')->name('userAddresses');
+            Route::get('/orders', 'OrdersController@index')->name('userOrders');
+
         });
     });
 });
