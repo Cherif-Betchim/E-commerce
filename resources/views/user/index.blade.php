@@ -11,7 +11,7 @@
             <h4>Gestion du compte:</h4>
             <a href="{{route('userProfile')}}"><li>Mon profil</li></a>
             <a href="{{route('userAddresses')}}"><li>Mes adresses</li></a>
-            <a href="{{route('userOrders')}}"><li>Mes achats</li></a>
+            <a href="{{route('orderIndex')}}"><li>Mes achats</li></a>
         </ul>
     </div>
 </div>

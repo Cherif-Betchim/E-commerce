@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use Auth;
 use Illuminate\Http\Request;
 use App\Order;
@@ -27,7 +28,9 @@ class OrderController extends Controller
      */
     public function index()
     {
-        $orders = Order::all();
+        $user = User::find(Auth::id());
+
+        $orders = $user->orders;
         
         return view('order.index', ['orders' => $orders]);
     }
@@ -55,7 +58,7 @@ class OrderController extends Controller
 
         $order = Order::create([
             'user_id' => Auth::id(),
-            'address_id' => Auth::address(),
+            'address_id' => 1,
             'total_price' => $cart->totalPrice
         ]);
 

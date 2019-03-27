@@ -10,6 +10,7 @@
                 <thead>
                 <tr>
                     <th>#</th>
+                    <th>user</th>
                     <th>date</th>
                     <th>prix total</th>
                     <th></th>
@@ -20,6 +21,9 @@
                     <tr>
                         <td>
                             {{ $order->id }}.
+                        </td>
+                        <td>
+                            {{ $order->user->first_name }}
                         </td>
                         <td>
                             {{ Carbon\Carbon::parse($order->created_at)->format('d/m/Y') }}
@@ -34,6 +38,7 @@
                 @endforeach
                 </tbody>
             </table>
+            <a href="{{route('userIndex')}}">Retour au menu </a>
         </div>
     </div>
 @endsection
