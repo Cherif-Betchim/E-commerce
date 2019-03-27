@@ -26,7 +26,9 @@ class OrderController extends Controller
      */
     public function index()
     {
-        //
+        $orders = Order::all();
+
+        return view('order.index', ['orders' => $orders]);
     }
 
     /**
@@ -77,9 +79,9 @@ class OrderController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Order $order)
     {
-        //
+        return view('order.show');
     }
 
     /**

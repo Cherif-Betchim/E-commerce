@@ -45,7 +45,6 @@ class ProductController extends Controller
             'name' => ['required', 'min:3', 'max:40'],
             'description' => ['required', 'min: 3'],
             'price' => ['required', 'numeric', 'min:0'],
-            'weight' => ['required', 'numeric', 'min:0'],
             'stock' => ['numeric', 'min:0'],
             'category_id' => ['required', 'numeric']
         ]);
@@ -95,7 +94,6 @@ class ProductController extends Controller
             'name' => ['required', 'min:3', 'max:40'],
             'description' => 'required',
             'price' => ['required', 'numeric', 'min:0'],
-            'weight' => ['required', 'numeric', 'min:0'],
             'stock' => ['required', 'numeric', 'min:0'],
             'category_id' => ['required', 'numeric']
         ]);
