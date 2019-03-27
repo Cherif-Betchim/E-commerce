@@ -1,8 +1,9 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\User;
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class AccountController extends Controller
 {
@@ -13,7 +14,7 @@ class AccountController extends Controller
      */
     public function index()
     {
-        return view('account');
+        return view('user.index');
     }
 
     /**
