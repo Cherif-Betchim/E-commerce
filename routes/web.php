@@ -13,7 +13,7 @@
 
 
 // Seuls les utilisateurs authentifiés peuvent accéder aux routes suivantes
-Route::middleware(['auth'])->group(function() {
+Route::middleware(['admin'])->group(function() {
 
     // Les Controllers des routes suivantes se trouvent dans le dossier Controllers/Admin
     Route::namespace('Admin')->group(function() {
