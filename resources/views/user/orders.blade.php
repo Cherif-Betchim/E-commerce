@@ -4,5 +4,5 @@
 
 @section('content')
 
-
+    <a href="{{route('userIndex')}}">Retour au menu </a>
 @endsection
