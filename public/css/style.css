@@ -559,28 +559,24 @@ body {
 
 /*          confirmation                            */
 
-.orderConfirm {
+.orderShow {
     text-align: center;
 }
 
-.orderConfirm div.container > p {
+.orderShow p {
     margin: auto;
-}
-
-.orderConfirm div.container > p.orderTrue {
     text-align: justify;
 }
 
-.orderConfirm div.container table {
-    margin-top: 2rem;
-    text-align: justify;
-}
-
-.orderConfirm div.container table .price {
+.orderShow p.orderFalse {
     text-align: center;
 }
 
-.orderConfirm .home-btn {
+.orderShow table {
+    margin-top: 2rem;
+}
+
+.orderShow .home-btn {
     display: inline-block;
     margin-top: 4rem;
     background: #2f15424f;
