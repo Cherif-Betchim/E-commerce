@@ -3,7 +3,7 @@
 @section('title', 'Panier')
 
 @section('content')
-    <div class="orderConfirm">
+    <div class="orderShow">
         <h1 class="title-2">Votre Panier</h1>
         <div class="container">
             @if(Session::has('cart'))
@@ -51,7 +51,7 @@
                 <a href="{{ route('index') }}" class="home-btn">Continuer vos achats</a>
                 <a href="{{ route('checkoutIndex') }}" class="btn btn-success"> Payer</a>
                 @else
-                <p class="col-7">
+                <p class="col-7 orderFalse">
                     Aucun article dans le panier.
                 </p>
                 <a href="{{ route('index') }}" class="home-btn">Continuer vos achats</a>

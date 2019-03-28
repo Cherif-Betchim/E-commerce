@@ -52,26 +52,26 @@ Route::middleware(['admin'])->group(function() {
             //-------------------------------------------------------------------
 
             //                                  - read
-            Route::get('/admin/categories', 'CategoryController@index')->name('categoryIndex');
+            Route::get('categories', 'CategoryController@index')->name('categoryIndex');
 
             //                                  - create
-            Route::get('/admin/categories/create', 'CategoryController@create')->name('categoryCreate');
-            Route::post('/admin/categories', 'CategoryController@store')->name('categoryStore');
+            Route::get('categories/create', 'CategoryController@create')->name('categoryCreate');
+            Route::post('categories', 'CategoryController@store')->name('categoryStore');
 
             //                                  - update
-            Route::get('/admin/categories/edit/{category}', 'CategoryController@edit')->name('categoryEdit');
-            Route::put('/admin/categories', 'CategoryController@update')->name('categoryUpdate');
+            Route::get('categories/edit/{category}', 'CategoryController@edit')->name('categoryEdit');
+            Route::put('categories', 'CategoryController@update')->name('categoryUpdate');
 
             //                                  - destroy
-            Route::delete('/admin/categories/{id}', 'CategoryController@destroy')->name('categoryDestroy');
+            Route::delete('categories/{id}', 'CategoryController@destroy')->name('categoryDestroy');
 
 
             //-------------------------------------------------------------------
             //                             (Admin) Order
             //-------------------------------------------------------------------
 
-            Route::get('/admin/orders', 'OrderController@index')->name('adminOrderIndex');
-            Route::get('/admin/orders/{id}', 'OrderController@show')->name('adminOrderShow');
+            Route::get('orders', 'OrderController@index')->name('adminOrderIndex');
+            Route::get('orders/{id}', 'OrderController@show')->name('adminOrderShow');
 
         });
     });
@@ -105,7 +105,7 @@ Route::middleware(['auth'])->group(function() {
 });
 
 
-// Tous les utilisateurs peuvent voir accéder aux routes suivantes
+// Tous les utilisateurs peuvent accéder aux routes suivantes
 
 Route::get('/', 'WelcomeController@index')->name('index');
 

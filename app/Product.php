@@ -4,9 +4,12 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use phpDocumentor\Reflection\Project;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Product extends Model
 {
+    use SoftDeletes;
+
     protected $fillable = ['name', 'description', 'price', 'weight', 'stock', 'category_id'];
 
     public function category()
