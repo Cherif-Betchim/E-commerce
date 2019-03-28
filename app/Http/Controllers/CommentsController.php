@@ -3,10 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 use App\Comment;
 use App\Product;
-use App\User;
 use Illuminate\Support\Facades\Auth;
 
 class CommentsController extends Controller
