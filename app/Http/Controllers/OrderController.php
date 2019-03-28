@@ -10,6 +10,11 @@ use App\Product;
 
 class OrderController extends Controller
 {
+    public function __construct()
+    {
+        parent::__construct();
+    }
+
     public function confirm(Request $request)
     {
         $order = $request->session()->get('order');

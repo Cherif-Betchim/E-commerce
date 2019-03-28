@@ -9,6 +9,10 @@ use App\Product;
 
 class CommentsController extends Controller
 {
+    public function __construct()
+    {
+        parent::__construct();
+    }
 
     public function store(Request $request)
     {

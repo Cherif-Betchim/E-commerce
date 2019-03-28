@@ -9,6 +9,11 @@ use App\Cart;
 
 class CartController extends Controller
 {
+    public function __construct()
+    {
+        parent::__construct();
+    }
+
     public function getAddToCart (Request $request, $id)
     {
         $product = Product::find($id);

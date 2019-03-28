@@ -6,6 +6,11 @@ use Illuminate\Http\Request;
 
 class ContactController extends Controller
 {
+    public function __construct()
+    {
+        parent::__construct();
+    }
+
     public function show()
     {
         return view ('contact');
