@@ -68,9 +68,18 @@
                     <input type="hidden" name="product_id" value="{{ $product->id }}" />
                 </fieldset>
 
+                @if (Auth::user())
+
 
                 <div class="form-group">
                     <button type="submit" class="btn btn-primary">Ajouter commentaire</button>
+
+                @else
+                    <p> Connectez-vous pour poster un message.
+                        <a href="{{ route('login') }}" class="btn btn-success" role="button">Login</a>
+
+                @endif
+
             </form>
         </div>
     </div>
