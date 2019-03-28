@@ -21,7 +21,7 @@ class CommentsController extends Controller
             $product->comments()->save($comment);
 
 
-            return back();
+            return back()->with('success', 'Votre message a bien été posté !');
 
         }else{
 

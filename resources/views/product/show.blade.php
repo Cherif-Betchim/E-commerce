@@ -26,7 +26,13 @@
         </p>
     </div>
 
+
     <div class="card">
+        @if (\Session::has('success'))
+            <div class="alert alert-success">
+                <p>{{ \Session::get('success') }}</p>
+            </div><br />
+        @endif
     <div class="container-comments">
 
     <h3>Derniers avis clients</h3>
