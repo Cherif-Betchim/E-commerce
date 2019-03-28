@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Auth;
 use Illuminate\Http\Request;
 use App\Product;
 use App\Category;
@@ -48,6 +49,12 @@ class CategoryController extends Controller
     public function show(Category $category, Request $request)
     {
         $url = '/category/' . $category->slug;
+
+        if ($url == '/category/temporaire') {
+           if (!Auth::user() || Auth::user()->is_admin == 0) {
+               return redirect (route('index'));
+            }
+        }
 
         $products = $category->products;
 

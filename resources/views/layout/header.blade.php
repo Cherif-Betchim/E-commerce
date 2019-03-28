@@ -15,7 +15,7 @@
                             </a>
                             <div class="dropdown-menu">
                                 @php
-                                $categories = App\Category::all();
+                                $categories = App\Category::where('name', '<>', 'temporaire')->orderBy('name')->get();
                                 @endphp
                                 @foreach($categories as $category)
                                     <a class="dropdown-item" href="{{ route('frontCategoryShow', ['category' => $category]) }}">

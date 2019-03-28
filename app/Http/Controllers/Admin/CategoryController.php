@@ -40,18 +40,23 @@ class CategoryController extends Controller
     public function store(Request $request)
     {
         $category = new Category;
-
-        $request->validate([
-            'name' => ['required', 'min:3', 'max:40']
-        ]);
-
         $category->name = $request->input('name');
         $category->slug = Str::slug($category->name, '-');
+        $checkCategory = Category::withTrashed()->where('name', $category->name)->first();
 
-        $category->save();
+        if ($category->name = $checkCategory->name) {
+            $checkCategory->restore();
+            $verb = 'restorée de';
+        } else {
+            $request->validate([
+                'name' => ['required', 'min:3', 'max:40', 'unique:categories,name']
+            ]);
+            $verb = 'ajoutée à';
+            $category->save();
+        }
 
         return redirect(route('categoryCreate'))
-            ->with('flash_message', 'La catégorie ' . $category['name'] . ' a bien été ajoutée à la base de données !')
+            ->with('flash_message', 'La catégorie ' . $category['name'] . ' a bien été ' . $verb . ' la base de données !')
             ->with('flash_type', 'alert-success');
     }
 
@@ -111,12 +116,17 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-        $categories = category::find($id);
+        $category = Category::find($id);
 
-        $categories->delete();
+        foreach ($category->products as $product) {
+            $product->category_id = 1; // on affecte la catégorie temporaire
+            $product->save();
+        }
+
+        $category->delete();
 
         return redirect(route('categoryIndex'))
-            ->with('flash_message', 'La catégorie ' . $categories['name'] . ' a bien été ajoutée à la base de données !')
+            ->with('flash_message', 'La catégorie ' . $category->name . ' a bien été supprimée de la base de données !')
             ->with('flash_type', 'alert-success');
     }
 }
