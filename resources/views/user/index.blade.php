@@ -6,7 +6,7 @@
 
 <div class="container">
     <div class="row">
-        Welcome, {{Auth::user()->first_name }}!
+        Welcome, {{Auth::user()->first_name}}!
         <ul>
             <h4>Gestion du compte:</h4>
             <a href="{{route('userProfile')}}"><li>Mon profil</li></a>
