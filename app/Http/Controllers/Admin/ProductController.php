@@ -42,10 +42,9 @@ class ProductController extends Controller
     public function store(Request $request)
     {
         $product = $request->validate([
-            'name' => ['required', 'min:3', 'max:40'],
+            'name' => ['required', 'min:3'],
             'description' => ['required', 'min: 3'],
             'price' => ['required', 'numeric', 'min:0'],
-            'weight' => ['required', 'numeric', 'min:0'],
             'stock' => ['numeric', 'min:0'],
             'category_id' => ['required', 'numeric']
         ]);
@@ -92,10 +91,9 @@ class ProductController extends Controller
     public function update(Request $request)
     {
         $request->validate([
-            'name' => ['required', 'min:3', 'max:40'],
+            'name' => ['required', 'min:3'],
             'description' => 'required',
             'price' => ['required', 'numeric', 'min:0'],
-            'weight' => ['required', 'numeric', 'min:0'],
             'stock' => ['required', 'numeric', 'min:0'],
             'category_id' => ['required', 'numeric']
         ]);
@@ -107,7 +105,6 @@ class ProductController extends Controller
         $product->name = $request->input('name');
         $product->description = $request->input('description');
         $product->price = $request->input('price');
-        $product->weight = $request->input('weight');
         $product->stock = $request->input('stock');
         $product->category_id = $request->input('category_id');
 

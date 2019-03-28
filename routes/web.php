@@ -12,8 +12,8 @@
 */
 
 
-// Seuls les utilisateurs authentifiés peuvent accéder aux routes suivantes
-Route::middleware(['auth'])->group(function() {
+// Seuls les utilisateurs admin peuvent accéder aux routes suivantes
+Route::middleware(['admin'])->group(function() {
 
     // Les Controllers des routes suivantes se trouvent dans le dossier Controllers/Admin
     Route::namespace('Admin')->group(function() {
@@ -79,13 +79,35 @@ Route::middleware(['auth'])->group(function() {
 
 
 
+// Seuls les utilisateurs authentifiés peuvent accéder aux routes suivantes
+Route::middleware(['auth'])->group(function() {
+
+    // profil utilisateur
+    Route::prefix('user')->group(function() {
+
+        Route::namespace('User')->group(function() {
+
+            Route::get('/index', 'AccountController@index')->name('userIndex');
+            Route::get('/profile', 'ProfileController@index')->name('userProfile');
+            Route::get('/addresses', 'AddressesController@index')->name('userAddresses');
+        });
+
+        Route::get('/orders', 'OrderController@index')->name('orderIndex');
+        Route::get('/orders/{order}', 'OrderController@show')->name('orderShow');
+    });
+
+    //-------------------------------------------------------------------
+    //                             (Front) Order
+    //-------------------------------------------------------------------
+
+    Route::post('/orders', 'OrderController@store')->name('orderStore');
+    Route::get('/checkout/confirmation', 'OrderController@confirm')->name('orderConfirm');
+});
 
 
-
-
+// Tous les utilisateurs peuvent voir accéder aux routes suivantes
 
 Route::get('/', 'WelcomeController@index')->name('index');
-
 
 
 //-------------------------------------------------------------------
@@ -97,10 +119,6 @@ Route::get('/products', 'ProductController@index')->name('frontProductIndex');
 Route::get('/products/{id}', 'ProductController@show')->name('frontProductShow');
 
 
-
-
-
-
 //-------------------------------------------------------------------
 //                             (Front) Category
 //-------------------------------------------------------------------
@@ -109,23 +127,12 @@ Route::get('/category/{category}', 'CategoryController@show')->name('frontCatego
 
 
 
-
-
-//-------------------------------------------------------------------
-//                             (Front) Order
-//-------------------------------------------------------------------
-
-Route::post('/order', 'OrderController@store')->name('orderStore');
-Route::get('/checkout/confirmation', 'OrderController@confirm')->name('orderConfirm');
-
-
-
 //-------------------------------------------------------------------
 //                             TO WORK ON
 //-------------------------------------------------------------------
 
 
-Route::get('/my-account', 'AccountController@index');
+
 Route::get('/cgv', 'CgvController@show');
 Route::get('/contact', 'ContactController@show')->name('contactIndex');
 Route::post('/contact/results', 'ContactController@store');
@@ -144,5 +151,3 @@ Route::post('/products/{id}/comments', 'CommentsController@store')->name('addCom
 
 
 Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');

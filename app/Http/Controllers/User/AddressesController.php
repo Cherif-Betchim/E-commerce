@@ -1,26 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\User;
 
-use App\User;
-use Auth;
 use Illuminate\Http\Request;
-use App\Order;
-use App\Product;
+use App\Http\Controllers\Controller;
 
-class OrderController extends Controller
+class AddressesController extends Controller
 {
-    public function confirm(Request $request)
-    {
-        $order = $request->session()->get('order');
-
-        $confirmation = $order;
-
-        $request->session()->forget(['order', 'totalPrice']);
-
-        return view('order.confirm', ['order' => $confirmation]);
-    }
-
     /**
      * Display a listing of the resource.
      *
@@ -28,11 +14,7 @@ class OrderController extends Controller
      */
     public function index()
     {
-        $user = User::find(Auth::id());
-
-        $orders = $user->orders;
-        
-        return view('order.index', ['orders' => $orders]);
+        return view('user.addresses');
     }
 
     /**
@@ -53,23 +35,7 @@ class OrderController extends Controller
      */
     public function store(Request $request)
     {
-        $cart = $request->session()->get('cart');
-        $products = $cart->items;
-
-        $order = Order::create([
-            'user_id' => Auth::id(),
-            'address_id' => 1,
-            'total_price' => $cart->totalPrice
-        ]);
-
-        foreach($products as $key => $product) {
-            $order->products()->attach($key, ['quantity' => $product['qty']]);
-        }
-
-        $request->session()->put('order', $order);
-        $request->session()->forget('cart');
-
-        return redirect(route('orderConfirm'));
+        //
     }
 
     /**
@@ -78,9 +44,9 @@ class OrderController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Order $order)
+    public function show($id)
     {
-        return view('order.show');
+        //
     }
 
     /**

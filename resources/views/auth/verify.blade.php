@@ -1,4 +1,6 @@
-@extends('layouts.app')
+@extends('layout.layout.layout')
+
+@section('title', 'Vérification de l\'adresse mail')
 
 @section('content')
 <div class="container">

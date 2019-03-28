@@ -8,7 +8,7 @@
             <div class="container">
                 @if($order)
                     <p class="col-7 orderTrue">
-                        Merci {{ $order->user }} pour votre commande. Veuillez-trouver ci-dessous un récapitulatif de vos achats.
+                        Merci {{ Auth::user()->first_name }} {{ Auth::user()->name }} pour votre commande. Veuillez-trouver ci-dessous un récapitulatif de vos achats.
                     </p>
                     <table class="table">
                         <thead>

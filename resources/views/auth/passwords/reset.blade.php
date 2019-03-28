@@ -1,4 +1,6 @@
-@extends('layouts.app')
+@extends('layout.layout')
+
+@section('title', 'Changer le mot de passe')
 
 @section('content')
 <div class="container">

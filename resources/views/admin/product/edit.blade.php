@@ -32,11 +32,6 @@
                 <small id="priceHelp" class="form-text text-muted">Entrez le prix en centimes. (Exemple : pour 10€, entrez 1000.)</small>
             </fieldset>
             <fieldset class="form-group">
-                <label for="weight">Poids : </label>
-                <input type="number" class="form-control" name="weight" id="weight" aria-describedby="weightHelp" value="{{ $product->weight }}">
-                <small id="weightHelp" class="text-muted">Entrez le poids en grammes. (Exemple : pour 1kg, entrez 1000.)</small>
-            </fieldset>
-            <fieldset class="form-group">
                 <label for="stock">Quantité en stock : </label>
                 <input type="number" class="form-control" name="stock" id="stock" value="{{ $product->stock }}">
             </fieldset>
