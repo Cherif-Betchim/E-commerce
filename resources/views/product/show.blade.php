@@ -27,40 +27,40 @@
     </div>
 
 
-    <div class="card">
+    <div class="card comments">
         @if (\Session::has('success'))
             <div class="alert alert-success">
                 <p>{{ \Session::get('success') }}</p>
             </div><br />
         @endif
-    <div class="container-comments">
+        <div class="container-comments">
 
-    <h3>Derniers avis clients</h3>
+            <h3>Derniers avis clients</h3>
 
-        {{--Affiche les commentaires--}}
-        @foreach ($product->comments as $comment)
+            {{--Affiche les commentaires--}}
+            @foreach ($product->comments as $comment)
 
-            <div class="display-comments">
+                <div class="display-comments">
 
-               <strong>{{$comment->user->name}} {{$comment->user->first_name}} </strong>
+                    <strong>{{$comment->user->name}} {{$comment->user->first_name}} </strong>
 
-                <small>le {{ Carbon\Carbon::parse($comment->created_at)->format('d-m-Y') }} :</small>
+                    <small>le {{ Carbon\Carbon::parse($comment->created_at)->format('d-m-Y') }} :</small>
 
-               <p>{{$comment->comment}}</p>
+                    <p>{{$comment->comment}}</p>
 
-            </div>
+                </div>
 
-        @endforeach
+            @endforeach
 
 
-    </div>
-    {{--Envoi les commentaires--}}
+        </div>
+        {{--Envoi les commentaires--}}
 
-    <div class="form-comments">
-        <h5>Vous aussi, laissez votre avis !</h5>
+        <div class="form-comments">
+            <h5>Vous aussi, laissez votre avis !</h5>
             <form method="POST" action="/products/{{$product->id}}/comments">
 
-{{csrf_field()}}
+                {{csrf_field()}}
 
 
                 <fieldset class="form-group">
@@ -71,21 +71,18 @@
                 @if (Auth::user())
 
 
-                <div class="form-group">
-                    <button type="submit" class="btn btn-primary">Ajouter commentaire</button>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary">Ajouter commentaire</button>
 
-                @else
-                    <p> Connectez-vous pour poster un message.
-                        <a href="{{ route('login') }}" class="btn btn-success" role="button">Login</a>
+                        @else
+                            <p> Connectez-vous pour poster un message.
+                                <a href="{{ route('login') }}" class="btn btn-success" role="button">Login</a>
 
                 @endif
 
             </form>
         </div>
     </div>
-
-    </div>
-
 
 
 @endsection
