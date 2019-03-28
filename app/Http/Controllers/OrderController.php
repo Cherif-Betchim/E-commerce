@@ -4,9 +4,9 @@ namespace App\Http\Controllers;
 
 use App\User;
 use Auth;
+use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Http\Request;
 use App\Order;
-use App\Product;
 
 class OrderController extends Controller
 {
@@ -80,12 +80,22 @@ class OrderController extends Controller
      */
     public function show(Order $order)
     {
-        $address = $order->address;
+        $orders = Auth::user()->orders;
 
-        return view('order.show', [
-            'order' => $order,
-            'address' => $address
-        ]);
+        foreach ($orders as $truc) {
+
+            if ($order->id == $truc->id) {
+
+                $address = $order->address;
+
+                return view('order.show', [
+                    'order' => $order,
+                    'address' => $address
+                ]);
+            }
+        }
+
+        throw new AuthorizationException('not for you bitch');
     }
 
     /**

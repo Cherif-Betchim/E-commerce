@@ -4,6 +4,8 @@ namespace App\Http\Middleware;
 
 use Auth;
 use Closure;
+use Illuminate\Auth\Access\AuthorizationException;
+use Illuminate\Auth\AuthenticationException;
 
 class IsAdmin
 {
@@ -19,7 +21,7 @@ class IsAdmin
         if (Auth::user() && Auth::user()->is_admin == 1) {
             return $next($request);
         }
-
-        return redirect('/');
+        throw new AuthorizationException('only for admin');
+        // AuthenticationException();
     }
 }
