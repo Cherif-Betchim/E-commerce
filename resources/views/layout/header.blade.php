@@ -14,10 +14,7 @@
                                 PRODUITS
                             </a>
                             <div class="dropdown-menu">
-                                @php
-                                $categories = App\Category::where('name', '<>', 'temporaire')->orderBy('name')->get();
-                                @endphp
-                                @foreach($categories as $category)
+                                @foreach($headerCategories as $category)
                                     <a class="dropdown-item" href="{{ route('frontCategoryShow', ['category' => $category]) }}">
                                         {{ $category->name }}
                                     </a>

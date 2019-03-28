@@ -11,6 +11,11 @@ use Illuminate\Support\Facades\Auth;
 
 class CheckoutController extends Controller
 {
+    public function __construct()
+    {
+        parent::__construct();
+    }
+
     public function getCheckout(){
         if (!Session::has('cart')){
             return view ('cart');
