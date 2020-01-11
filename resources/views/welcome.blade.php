@@ -10,16 +10,17 @@
                     <div class="login col-lg-5">
                         <div class="container">
                             <h2 class="title-2">Bienvenue sur notre boutique <span class="color">ILOT-3</span></h2>
-
-                            <p>
-                                <span class="italic"> Pssssst ! Par ici !</span><br>Commencez par vous créer un compte ou vous connecter.
-                            </p>
-                            <a href="/" class="home-btn">
-                                Se Connecter
-                            </a>
-                            <a href="/" class="home-btn">
-                                Créer un compte
-                            </a>
+                            @guest
+                                <p>
+                                    <span class="italic"> Pssssst ! Par ici !</span><br>Commencez par vous créer un compte ou vous connecter.
+                                </p>
+                                <a href="{{ route('login') }}" class="home-btn">
+                                    Se Connecter
+                                </a>
+                                <a href="{{ route('register') }}" class="home-btn">
+                                    Créer un compte
+                                </a>
+                            @endguest
                         </div>
                     </div>
                     <div class="col-lg-7">
@@ -33,49 +34,22 @@
         <div class="container">
             <h2 class="title-2">Nos derniers produits</h2>
             <div class="row">
-                <article class="product col-lg-4">
-                    <a href="">
-                        <img src="{{ asset('img/home/product.png') }}" alt="">
-                    </a>
-                    <h3 class="title-3">
-                        Produit 1
-                    </h3>
-                    <p>
-                            Prix : <span class="color bold">???? €</span>
-                    </p>
-                    <a href="" class="cart-btn">Ajouter au panier</a>
-                </article>
-
-                <article class="product col-lg-4">
-                    <a href="">
-                        <img src="{{ asset('img/home/product.png') }}" alt="">
-                    </a>
-                    <h3 class="title-3">
-                        Produit 2
-                    </h3>
-                    <p>
-                            Prix : <span class="color bold">???? €</span>
-                    </p>
-                    <a href="" class="cart-btn">Ajouter au panier</a>
-
-                </article>
-
-                <article class="product col-lg-4">
-                    <a href="">
-                        <img src="{{ asset('img/home/product.png') }}" alt="">
-                    </a>
-                    <h3 class="title-3">
-                        Produit 3
-                    </h3>
-                    <p>
-                            Prix : <span class="color bold">???? €</span>
-                    </p>
-                    <a href="" class="cart-btn">Ajouter au panier</a>
-
-                </article>
+                @foreach($latestProducts as $product)
+                    <article class="product col-lg-4">
+                        <a href="{{ route('frontProductShow', ['product' => $product]) }}">
+                            <img src="{{ asset('img/home/product.png') }}" alt="{{ $product->name }}">
+                        </a>
+                        <h3 class="title-3">
+                            {{ $product->name }}
+                        </h3>
+                        <p>
+                                Prix : <span class="color bold">{{ $product->price/100 }}€</span>
+                        </p>
+                    </article>
+                @endforeach
             </div>
             <p class="btn-container">
-                <a href="/products" class="home-btn">Plus de produits</a>
+                <a href="{{ route('frontProductIndex') }}" class="home-btn">Plus de produits</a>
             </p>
         </div>
     </div>
@@ -87,49 +61,19 @@
             <h2 class="title-2">
                 Shoppez par catégories
             </h2>
-            <div class="row">
-                <div class="category col-lg-12">
-                    <li class="col-lg-3">
-                        <a href="">
+            <div class="category row col-lg-12">
+                @foreach($categories as $category)
+                    <div class="col-lg-3">
+                        <a href="{{ route('frontCategoryShow', ['category' => $category]) }}">
                             <div class="img-category">
-                                <img src="{{ asset('img/home/product.png') }}" alt="Category 1">
+                                <img src="{{ asset('img/home/product.png') }}" alt="{{ $category->name }}">
                             </div>
                             <div class="label-category">
-                                <p>Catégories 1</p>
+                                <p>{{ $category->name }}</p>
                             </div>
                         </a>
-                    </li>
-                    <li class="col-lg-3">
-                        <a href="">
-                            <div class="img-category">
-                                <img src="{{ asset('img/home/product.png') }}" alt="Category 2">
-                            </div>
-                            <div class="label-category">
-                                <p>Catégories 2</p>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="col-lg-3">
-                        <a href="">
-                            <div class="img-category">
-                                <img src="{{ asset('img/home/product.png') }}" alt="Category 3">
-                            </div>
-                            <div class="label-category">
-                                <p>Catégories 3</p>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="col-lg-3">
-                        <a href="">
-                            <div class="img-category">
-                                <img src="{{ asset('img/home/product.png') }}" alt="Category 4">
-                            </div>
-                            <div class="label-category">
-                                <p>Catégories 4</p>
-                            </div>
-                        </a>
-                    </li>
-                </div>
+                    </div>
+                @endforeach
             </div>
         </div>
     </div>

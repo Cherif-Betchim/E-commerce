@@ -4,12 +4,20 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
+use Illuminate\Database\Eloquent\SoftDeletes;
+
 class Comment extends Model
 {
-    protected $fillable = ['name', 'description','product_id'];
-    public $timestamps = false;
+    use SoftDeletes;
 
-    public function product(){
-       return $this->belongsTo('App\Product');
+    protected $fillable = ['comment'];
+
+    public function product()
+    {
+        return $this->belongsTo('App\Product');
+    }
+    public function user()
+    {
+        return $this->belongsTo('App\User');
     }
 }

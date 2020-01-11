@@ -1,11 +1,5 @@
-<aside>
-    <p>
-        <a href="{{ route('frontProductIndex', ['sort' => 'name']) }}" class="btn btn-secondary">Tri par nom</a>
-    </p>
-    <p>
-        <a href="{{ route('frontProductIndex', ['sort' => 'price']) }}" class="btn btn-secondary">Tri par prix croissant</a>
-    </p>
-    <p>
-        <a href="{{ route('frontProductIndex') }}">Ne pas trier</a>
-    </p>
-</aside>
+<div class="container filter">
+    <a href="?sort=name" class="home-btn">Tri par nom</a>
+    <a href="?sort=price" class="home-btn">Tri par prix croissant</a>
+    <a href="{{ $url }}" class="home-btn setback">Ne pas trier</a>
+</div>

@@ -4,10 +4,16 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Product;
+use App\Category;
 
 
 class ProductController extends Controller
 {
+    public function __construct()
+    {
+        parent::__construct();
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -15,6 +21,8 @@ class ProductController extends Controller
      */
     public function index()
     {
+        $url = '/products';
+
         $products = Product::all();
 
         if (isset($_GET['sort'])) {
@@ -26,7 +34,10 @@ class ProductController extends Controller
             }
         }
 
-        return view('product.index', ['products' => $products]);
+        return view('product.index', [
+            'products' => $products,
+            'url' => $url
+        ]);
     }
 
     /**
