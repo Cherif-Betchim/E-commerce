@@ -6,6 +6,11 @@ use Illuminate\Http\Request;
 
 class ResultsController extends Controller
 {
+    public function __construct()
+    {
+        parent::__construct();
+    }
+
     public function store(Request $request)
     {
         $data = [

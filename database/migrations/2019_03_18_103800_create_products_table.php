@@ -18,15 +18,11 @@ class CreateProductsTable extends Migration
             $table->string('name');
             $table->text('description');
             $table->integer('price');
-            $table->integer('weight');
             $table->integer('stock');
+            $table->unsignedBigInteger('category_id');
+            $table->foreign('category_id')->references('id')->on('categories');
             $table->timestampsTz();
             $table->softDeletesTz();
-        });
-
-        Schema::table('products', function (Blueprint $table) {
-           $table->unsignedBigInteger('category_id');
-           $table->foreign('category_id')->references('id')->on('categories');
         });
     }
 

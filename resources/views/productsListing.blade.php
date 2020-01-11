@@ -1,21 +1,21 @@
-<div>
-    @foreach ($products as $product)
-        <article>
-            <div>
-                <img src="{{ asset('img/products/' . $product->id ) }}.jpg" alt="{{ $product->name }}"/>
-            </div>
-            <div>
-                <h3>
-                    <a href="{{ route('frontProductShow', ['product' => $product]) }}">{{ $product->name }}</a>
-                </h3>
-                <p>
-                    {{ $product->description }}
-                </p>
+<div class="container products">
+    <div class="row">
+        @foreach ($products as $product)
+            <article class="product col-lg-4">
+                <a href="{{ route('frontProductShow', ['product' => $product]) }}">
+                    <img src="{{ asset('img/home/product.png' ) }}" alt="{{ $product->name }}"/>
+                </a>
                 <div>
-                    {{ $product->price / 100 }} €
-                    <a href="{{ route('productAddToCart', ['id' => $product->id]) }}" class="btn" role="button">Ajouter au panier</a>
+                    <h3 class="title-3">{{ $product->name }}</h3>
+                    <p>
+                        {{ Str::limit($product->description, 60, '...') }}
+                    </p>
+                    <p>
+                        Prix : <span class="color bold">{{ $product->price / 100 }} €</span>
+                    </p>
+                    <a href="{{ route('productAddToCart', ['id' => $product->id]) }}" class="cart-btn" role="button">Ajouter au panier</a>
                 </div>
-            </div>
-        </article>
-    @endforeach
+            </article>
+        @endforeach
+    </div>
 </div>

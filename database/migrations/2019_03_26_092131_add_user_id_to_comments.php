@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class UpdateCategoriesTable extends Migration
+class AddUserIdToComments extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,9 @@ class UpdateCategoriesTable extends Migration
      */
     public function up()
     {
-        Schema::table('categories', function (Blueprint $table) {
-            $table->unique('name');
-            $table->string('slug')->after('name');
+        Schema::table('comments', function (Blueprint $table) {
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 
@@ -26,6 +26,8 @@ class UpdateCategoriesTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::table('comments', function (Blueprint $table) {
+            $table->dropColumn('user_id');
+        });
     }
 }

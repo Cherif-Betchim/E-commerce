@@ -4,6 +4,8 @@
 
 @section('content')
     @include('productsFilters')
-        <h2>{{ $category->name }}</h2>
+    <div class="container categoryHeader">
+        <h2 class="title-2">{{ $category->name }}</h2>
+    </div>
     @include('productsListing')
 @endsection

@@ -2,12 +2,18 @@
 
 namespace App\Http\Controllers;
 
+use Auth;
 use Illuminate\Http\Request;
 use App\Product;
 use App\Category;
 
 class CategoryController extends Controller
 {
+    public function __construct()
+    {
+        parent::__construct();
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -45,14 +51,31 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Category $category, Request $request)
     {
-        $category = Category::find($id);
+        $url = '/category/' . $category->slug;
+
+        if ($url == '/category/temporaire') {
+           if (!Auth::user() || Auth::user()->is_admin == 0) {
+               return redirect (route('index'));
+            }
+        }
+
         $products = $category->products;
+
+        if (isset($_GET['sort'])) {
+            if ($_GET['sort'] == 'name')
+            {
+                $products = $category->products->sortBy('name');
+            } elseif ($_GET['sort'] == 'price') {
+                $products = $category->products->sortBy('price');
+            }
+        }
 
         return view('category.show', [
             'products' => $products,
-            'category' => $category
+            'category' => $category,
+            'url' => $url
         ]);
     }
 
